@@ -1,0 +1,51 @@
+.features {
+  background-color: #ffffff;
+  background-image: url(/img/features-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding-bottom: 155px;
+  .section-title {
+    text-align: center;
+    margin: 0;
+    line-height: 5rem;
+    color: $colorTitleFeatures;
+    padding: 13% 0 5.6% 0;
+  }
+  &__list {
+    @include flex();
+    flex-wrap: wrap;
+  }
+  &__item {
+    width: 31.8%;
+    @include flex();
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__image-wrap {
+    overflow: hidden;
+  }
+  &__image {
+
+  }
+  &__item-title {
+    font-size: 1.7rem;
+    line-height: 2rem;
+    letter-spacing: -1px;
+    font-family: $ffLifehack;
+    text-align: center;
+    margin: 0;
+    padding: 29px 7px 17px 2px;
+  }
+  &__item:last-child &__item-title {
+    padding: 43px 7px 9px 2px;
+  }
+  &__item-desc {
+    color: $colorTitleFeatures;
+    text-align: center;
+    font-family: $ffUbuntu;
+    font-weight: 300;
+    line-height: 1.7rem;
+  }
+}

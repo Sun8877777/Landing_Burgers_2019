@@ -1,0 +1,13 @@
+.arrow {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  bottom: -125px;
+  left: 50%;
+  margin-left: -15px;
+  cursor: pointer;
+  &--down{
+    background-image: url('/img/arrow-scroll.png');
+    background-repeat: no-repeat;
+  }
+}

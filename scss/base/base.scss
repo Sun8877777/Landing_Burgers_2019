@@ -1,0 +1,129 @@
+// Переменные
+$bgBtnColor: #e45028;
+$colorTitle:#f9b43b;
+$colorTitleFeatures: #2f3234;
+$bgHeaderColor: #010101;
+$colorWhite: #ffffff;
+$colorBlack: #000000;
+$ffUbuntu: 'Ubuntu', 'Arial', sans-serif;
+$ffGagalin: 'Gagalin', 'Arial', sans-serif;
+$ffLifehack: 'Lifehack', 'Arial', sans-serif;
+$rwBtnBgColor: #2f3234;
+$rwBtnBgColorHv: #1f2122;
+
+
+@mixin flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin button {
+  display: block;
+  padding: 8px 15px;
+  font-size: 13px;
+  text-align: center;
+  border-radius: 5px;
+  text-transform: uppercase;
+  background-color: $bgBtnColor;
+}
+@mixin flex-card {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+html,
+body,
+.wrapper {
+  height: 100%;
+}
+html {
+  font-size: 14px;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $ffUbuntu;
+  font-weight: normal;
+  font-size: 1rem;
+  line-height: 1.4rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+ul, figure, p {
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  width: 940px;
+  margin: 0 auto;
+}
+.container--flex {
+  display: flex;
+  justify-content: space-between;
+}
+.container--max {
+  width: 1100px;
+}
+
+.section-title {
+  font-family: $ffGagalin;
+  font-size: 5rem;
+  color: $colorTitle;
+}
+.section-title__inner-text {
+  font-family: $ffLifehack;
+  font-weight: 500;
+  font-size: 4.6rem;
+  color: #ffffff;
+}
+
+.main-content {
+  flex: 1 0 auto;
+}
+
+// .main {
+
+// }
+
+.new-order {
+  @include button();
+}
