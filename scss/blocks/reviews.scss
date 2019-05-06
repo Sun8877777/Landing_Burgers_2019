@@ -38,14 +38,11 @@
       z-index: 10;
     }
 
-    &-title {
-      font-family: $ffGagalin;
+    .section-title {
       font-size: 1rem;
       line-height: 2rem;
-      text-transform: uppercase;
-      color: #ffffff;
-      letter-spacing: -0.4px;
-      padding: 7px 0 0 0;
+      letter-spacing: 0;
+      padding: 6px 0 14px 0;
       transition: 1s;
     }
 
@@ -53,17 +50,14 @@
       line-height: 1.75rem;
       color: #ffffff;
       padding-bottom: 1rem;
+      font-weight: 300;
     }
 
     &-btn {
+      @include button();
       background-color: $rwBtnBgColor;
-      text-transform: uppercase;
       color: #ffffff;
-      width: 47%;
-      padding: 9px 0 6px;
-      text-align: center;
-      font-size: 0.9rem;
-      border-radius: 3px;
+      padding: 10px 14px;
       border: none;
       transition: 1s;
       &:hover {

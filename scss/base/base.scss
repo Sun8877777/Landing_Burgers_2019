@@ -1,6 +1,6 @@
 // Переменные
 $bgBtnColor: #e45028;
-$colorTitle:#f9b43b;
+$colorOrange:#f9b43b;
 $colorTitleFeatures: #2f3234;
 $bgHeaderColor: #010101;
 $colorWhite: #ffffff;
@@ -10,6 +10,7 @@ $ffGagalin: 'Gagalin', 'Arial', sans-serif;
 $ffLifehack: 'Lifehack', 'Arial', sans-serif;
 $rwBtnBgColor: #2f3234;
 $rwBtnBgColorHv: #1f2122;
+$fwMedium: 500;
 
 
 @mixin flex {
@@ -19,12 +20,15 @@ $rwBtnBgColorHv: #1f2122;
 
 @mixin button {
   display: block;
-  padding: 8px 15px;
-  font-size: 13px;
+  padding: 8px 14px;
+  letter-spacing: 0.5px;
+  font-size: 0.9rem;
   text-align: center;
   border-radius: 5px;
   text-transform: uppercase;
   background-color: $bgBtnColor;
+  font-family: $ffUbuntu;
+  font-weight: $fwMedium;
 }
 @mixin flex-card {
   display: flex;
@@ -85,6 +89,7 @@ a {
   display: block;
   text-decoration: none;
   color: inherit;
+  font: inherit;
 }
 
 .wrapper {
@@ -107,11 +112,20 @@ a {
 .section-title {
   font-family: $ffGagalin;
   font-size: 5rem;
-  color: $colorTitle;
+  line-height: 6.07rem;
+  letter-spacing: 1px;
+  margin-bottom: 0;
+  color: $colorOrange;
 }
+.section-title--orange {
+  color: $colorOrange;
+} 
+.section-title--white {
+  color: #ffffff;
+} 
 .section-title__inner-text {
   font-family: $ffLifehack;
-  font-weight: 500;
+  font-weight: 500;  
   font-size: 4.6rem;
   color: #ffffff;
 }
@@ -126,4 +140,5 @@ a {
 
 .new-order {
   @include button();
+  font-size: 0.9rem;
 }

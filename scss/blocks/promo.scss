@@ -3,7 +3,7 @@
   .promo__image-wrap {
     background-image: url('/img/drops.png');
     background-repeat: no-repeat;
-    background-position: 79% 20%;
+    background-position: 85% 19%;
     width: 50%;
     padding-bottom: 149px;
     overflow: hidden;
@@ -16,11 +16,12 @@
     width: 50%;
     padding-left: 11px;
     .section-title {
-      padding-top: 104px;
+      padding-top: 75px;
+      padding-bottom: 20px;
     }
     .section-title__inner-text {
-      line-height: 4rem;
-      letter-spacing: -1.2px;
+      line-height: 4.2rem;
+      letter-spacing: -1.25px;
       text-transform: lowercase;
     }
   }

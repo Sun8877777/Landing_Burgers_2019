@@ -1,15 +1,19 @@
 .main-nav {
-  width: 77%;
+  width: 76%;
   &__list {
     @include flex();
     flex-wrap: wrap;
     justify-content: flex-start;
     overflow: hidden;
-    padding-left: 17px;
+    margin-left: 38px;
   }
   &__item {
     position: relative;
-    padding-left: 35px;
+    padding: 0 16px 0 21px;
+    &:first-child {
+      padding-left: 0;
+      margin-left: 0;
+    }
     &:last-child {
       padding-right: 0;
     }
@@ -17,7 +21,7 @@
       content: '';
       position: absolute;
       top: 7px;
-      left: 13px;
+      left: 1px;
       width: 4px;
       height: 4px;
       background-color: #ffffff;
@@ -25,8 +29,11 @@
     }
   }
   &__link {
-    font-size: 13px;
+    text-align: center;
+    font-size: 0.9rem;
+    // letter-spacing: 0;
     text-transform: uppercase;
+    font-weight: $fwMedium;
   &:hover {
     cursor: pointer;
     }
