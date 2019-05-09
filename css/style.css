@@ -350,8 +350,8 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: "Ubuntu", "Arial", sans-serif;
   font-weight: normal;
+  font-family: "Ubuntu", "Arial", sans-serif;
   font-size: 1rem;
   line-height: 1;
   -webkit-font-smoothing: antialiased;
@@ -372,7 +372,9 @@ body {
 * {
   box-sizing: border-box; }
 
-ul, picture, p {
+ul,
+picture,
+p {
   padding: 0;
   margin: 0; }
 
@@ -425,7 +427,7 @@ table {
   width: 100%; }
 
 .section-title {
-  font-family: "Gagalin", "Arial", sans-serif;
+  font-family: 'Gagalin', Helvetica, sans-serif;
   font-size: 5rem;
   letter-spacing: 1px;
   margin-bottom: 0; }
@@ -442,7 +444,7 @@ table {
 .btn {
   font-family: 'Ubuntu', Helvetica, sans-serif;
   font-weight: 500;
-  padding: 10px 15px;
+  padding: 10px 14px;
   border-radius: 5px;
   background-color: #e45028;
   text-transform: uppercase;
@@ -453,7 +455,7 @@ table {
 
 .hero {
   background-color: #000000;
-  background-image: url(/img/texture.png), url(/img/video-bg.jpg);
+  background-image: url("/img/texture.png"), url("/img/video-bg.jpg");
   background-position: center, top center;
   background-repeat: repeat, no-repeat;
   background-size: cover; }
@@ -509,10 +511,11 @@ table {
       background-color: #ffffff;
       border-radius: 50%; }
   .main-nav__link {
+    font-family: 'Ubuntu', Helvetica, sans-serif;
+    font-weight: 500;
     text-align: center;
     font-size: 0.9rem;
-    text-transform: uppercase;
-    font-weight: 500; }
+    text-transform: uppercase; }
     .main-nav__link:hover {
       cursor: pointer; }
 
@@ -541,12 +544,13 @@ table {
       margin-top: 6rem;
       margin-bottom: 1.5rem; }
   .promo .promo__text {
-    font-family: "Lifehack", "Arial", sans-serif;
+    font-family: 'Lifehack', Helvetica, sans-serif;
     font-size: 4.6rem;
     color: #ffffff; }
 
 .right-nav {
   position: fixed;
+  z-index: 100;
   right: 3.9%;
   top: 13.4%;
   display: flex;
@@ -590,14 +594,14 @@ table {
 
 .features {
   background-color: #ffffff;
-  background-image: url(/img/features-bg.jpg);
+  background-image: url("/img/features-bg.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   padding-bottom: 10.3%; }
   .features .section-title {
     text-align: center;
-    padding: 9.5% 0 5% 0; }
+    padding: 9.7% 0 5% 0; }
   .features__list {
     display: flex;
     justify-content: space-between;
@@ -612,20 +616,20 @@ table {
   .features__image-wrap {
     overflow: hidden; }
   .features__item-title {
+    font-family: 'Lifehack', Helvetica, sans-serif;
     font-size: 1.7rem;
-    line-height: 2rem;
+    line-height: 1.2;
     letter-spacing: -0.35px;
-    font-family: "Lifehack", "Arial", sans-serif;
     text-align: center;
     margin: 0;
     padding: 31px 3px 15px 0px; }
   .features__item:last-child .features__item-title {
     padding: 43px 7px 9px 2px; }
   .features__item-desc {
+    font-family: 'Ubuntu', Helvetica, sans-serif;
+    font-weight: 300;
     color: #2f3234;
     text-align: center;
-    font-family: "Ubuntu", "Arial", sans-serif;
-    font-weight: 300;
     line-height: 1.75rem; }
 
 .reviews__list {

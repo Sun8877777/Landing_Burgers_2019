@@ -1,5 +1,5 @@
 .section-title {
-  font-family: $ffGagalin;
+  @include gagalin();
   font-size: 5rem;
   letter-spacing: 1px;
   margin-bottom: 0;

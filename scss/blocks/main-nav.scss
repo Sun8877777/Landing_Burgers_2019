@@ -1,5 +1,6 @@
 .main-nav {
   width: 76%;
+
   &__list {
     @include flex();
     flex-wrap: wrap;
@@ -7,16 +8,20 @@
     overflow: hidden;
     margin-left: 38px;
   }
+
   &__item {
     position: relative;
     padding: 0 16px 0 21px;
+
     &:first-child {
       padding-left: 0;
       margin-left: 0;
     }
+
     &:last-child {
       padding-right: 0;
     }
+
     &:not(:first-child)::before {
       content: '';
       position: absolute;
@@ -28,14 +33,15 @@
       border-radius: 50%;
     }
   }
+
   &__link {
+    @include ubuntu(medium);
     text-align: center;
     font-size: 0.9rem;
-    // letter-spacing: 0;
     text-transform: uppercase;
-    font-weight: $fwMedium;
-  &:hover {
-    cursor: pointer;
+
+    &:hover {
+      cursor: pointer;
     }
   }
 }

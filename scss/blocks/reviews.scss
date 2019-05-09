@@ -4,6 +4,7 @@
     height: 100%;
   }
 }
+
 .reviews__item {
   position: relative;
   width: 25%;
@@ -11,6 +12,7 @@
   overflow: hidden;
   cursor: pointer;
   filter: grayscale(1);
+
   &::before {
     content: '';
     position: absolute;
@@ -22,6 +24,7 @@
     opacity: 0.7;
     z-index: 1;
   }
+
   &:hover {
     .reviews__item-hvr {
       opacity: 1;
@@ -64,6 +67,7 @@
   letter-spacing: 0;
   color: #ffffff;
   border: none;
+
   &:hover {
     background-color: $rwBtnBgColorHv;
     cursor: pointer;

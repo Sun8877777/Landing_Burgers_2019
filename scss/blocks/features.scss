@@ -1,13 +1,13 @@
 .features {
   background-color: #ffffff;
-  background-image: url(/img/features-bg.jpg);
+  background-image: url('/img/features-bg.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   padding-bottom: 10.3%;
   .section-title {
     text-align: center;
-    padding: 9.5% 0 5% 0;
+    padding: 9.7% 0 5% 0;
   }
   &__list {
     @include flex();
@@ -23,14 +23,11 @@
   &__image-wrap {
     overflow: hidden;
   }
-  &__image {
-
-  }
   &__item-title {
+    @include lifehack();
     font-size: 1.7rem;
-    line-height: 2rem;
+    line-height: 1.2;
     letter-spacing: -0.35px;
-    font-family: $ffLifehack;
     text-align: center;
     margin: 0;
     padding: 31px 3px 15px 0px;
@@ -39,10 +36,9 @@
     padding: 43px 7px 9px 2px;
   }
   &__item-desc {
+    @include ubuntu(light);
     color: $colorTitleDarken;
     text-align: center;
-    font-family: $ffUbuntu;
-    font-weight: 300;
     line-height: 1.75rem;
   }
 }

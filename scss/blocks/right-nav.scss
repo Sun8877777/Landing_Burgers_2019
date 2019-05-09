@@ -1,5 +1,6 @@
 .right-nav {
   position: fixed;
+  z-index: 100;
   right: 3.9%;
   top: 13.4%;
   @include flex();
@@ -8,12 +9,14 @@
   align-items: center;
   height: 191px;
   width: 30px;
+
   &__link {
     position: relative;
     width: 7px;
     height: 7px;
     background-color: #ffffff;
     border-radius: 50%;
+
     &--active::before {
       position: absolute;
       top: -4px;
