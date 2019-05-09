@@ -1,75 +1,71 @@
 .reviews {
   &__list {
     @include flex-card();
+    height: 100%;
   }
-  &__item {
-    position: relative;
-    width: 25%;
-    height: 325px;
-    overflow: hidden;
-    transition: 1s;
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: #000000;
-      opacity: 0.7;
-      z-index: 1;
-    }
-
-    &-image-wrap {
-      overflow: hidden;
-    }
-
-    &-image {
-      filter: grayscale(1);
-    }
-
-    &-wrap {
-      display: none;
-      position: absolute;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      padding: 20px;
-      z-index: 10;
-    }
-
-    .section-title {
-      font-size: 1rem;
-      line-height: 2rem;
-      letter-spacing: 0;
-      padding: 6px 0 14px 0;
-      transition: 1s;
-    }
-
-    &-text {
-      line-height: 1.75rem;
-      color: #ffffff;
-      padding-bottom: 1rem;
-      font-weight: 300;
-    }
-
-    &-btn {
-      @include button();
-      background-color: $rwBtnBgColor;
-      color: #ffffff;
-      padding: 10px 14px;
-      border: none;
-      transition: 1s;
-      &:hover {
-        background-color: $rwBtnBgColorHv;
-        cursor: pointer;
-      }
+}
+.reviews__item {
+  position: relative;
+  width: 25%;
+  height: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  filter: grayscale(1);
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    opacity: 0.7;
+    z-index: 1;
+  }
+  &:hover {
+    .reviews__item-hvr {
+      opacity: 1;
     }
   }
 }
-.reviews__item:hover {
-  .reviews__item-wrap {
-    display: block;
-    cursor: pointer; 
+
+.reviews__item-image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.reviews__item-hvr {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  z-index: 10;
+  opacity: 0;
+  transition: opacity .3s;
+}
+
+.reviews__item .section-title {
+  font-size: 1rem;
+  letter-spacing: 0;
+  padding: 2rem 0 1.5rem 0;
+}
+
+.reviews__item-text {
+  line-height: 1.75rem;
+  color: #ffffff;
+  padding-bottom: 1rem;
+  font-weight: 300;
+}
+
+.reviews__item-btn {
+  background-color: $rwBtnBgColor;
+  letter-spacing: 0;
+  color: #ffffff;
+  border: none;
+  &:hover {
+    background-color: $rwBtnBgColorHv;
+    cursor: pointer;
   }
 }

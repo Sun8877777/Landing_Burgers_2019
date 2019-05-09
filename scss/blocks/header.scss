@@ -1,9 +1,4 @@
 .header {
-  background-color: #000000;
-  background-image: url(/img/texture.png), url(/img/video-bg.jpg);
-  background-position: center, top center;
-  background-repeat: repeat, no-repeat;
-  background-size: cover;
   color: $colorWhite;
   &__top {
     position: relative;

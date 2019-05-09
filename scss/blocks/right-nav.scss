@@ -1,7 +1,7 @@
 .right-nav {
-  position: absolute;
-  right: -38px;
-  top: 88px;
+  position: fixed;
+  right: 3.9%;
+  top: 13.4%;
   @include flex();
   justify-content: space-around;
   flex-direction: column;
@@ -27,6 +27,4 @@
       border: 0px solid #ffffff;
     }
   }
-  
-  
 }

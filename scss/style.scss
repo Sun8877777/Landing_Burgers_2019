@@ -1,6 +1,11 @@
-@import './base/normalize.scss';
 @import './base/font.scss';
+@import './base/normalize.scss';
+@import './base/variables.scss';
+@import './base/mixin.scss';
 @import './base/base.scss';
+@import './blocks/section-title.scss';
+@import './blocks/btn.scss';
+@import './blocks/hero.scss';
 @import './blocks/header.scss';
 @import './blocks/logo.scss';
 @import './blocks/main-nav.scss';

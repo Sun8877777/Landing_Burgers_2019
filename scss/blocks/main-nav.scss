@@ -20,7 +20,7 @@
     &:not(:first-child)::before {
       content: '';
       position: absolute;
-      top: 7px;
+      top: 3px;
       left: 1px;
       width: 4px;
       height: 4px;

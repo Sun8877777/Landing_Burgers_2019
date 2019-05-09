@@ -7,10 +7,7 @@
   padding-bottom: 10.3%;
   .section-title {
     text-align: center;
-    margin: 0;
-    line-height: 5rem;
-    color: $colorTitleFeatures;
-    padding: 13.5% 0 5% 0;
+    padding: 9.5% 0 5% 0;
   }
   &__list {
     @include flex();
@@ -42,7 +39,7 @@
     padding: 43px 7px 9px 2px;
   }
   &__item-desc {
-    color: $colorTitleFeatures;
+    color: $colorTitleDarken;
     text-align: center;
     font-family: $ffUbuntu;
     font-weight: 300;
