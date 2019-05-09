@@ -628,6 +628,104 @@ table {
     text-align: center;
     line-height: 1.75rem; }
 
+.teams {
+  background: #2f3234 url("/img/teams-bg.jpg") no-repeat center;
+  background-size: cover;
+  position: relative; }
+  .teams .section-title {
+    padding-top: 0.5rem;
+    padding-bottom: 3rem; }
+
+.teams__wrap {
+  position: absolute;
+  top: 0;
+  left: 51%;
+  width: 50%;
+  height: 100%;
+  background-color: #595959;
+  opacity: 0.93;
+  padding: 9%;
+  overflow: hidden; }
+
+.teams__item {
+  padding-bottom: 1.6rem; }
+
+.employee {
+  color: #ffffff; }
+  .employee .employee__name::before {
+    opacity: 1; }
+  .employee .employee__name::after {
+    opacity: 0; }
+  .employee--active .employee__name {
+    color: #f9b43b; }
+  .employee--active .employee__name::before {
+    opacity: 0; }
+  .employee--active .employee__name::after {
+    opacity: 1; }
+  .employee--active .employee__desc {
+    height: 100%;
+    padding-bottom: 1.2rem; }
+
+.employee__name {
+  position: relative;
+  font-family: 'Gagalin', Helvetica, sans-serif;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  font-size: 1rem;
+  padding-left: 1.2rem; }
+  .employee__name::before {
+    content: '';
+    position: absolute;
+    left: -1px;
+    top: 6px;
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 7px solid #f9b43b; }
+  .employee__name::after {
+    content: '';
+    position: absolute;
+    left: -1px;
+    top: 6px;
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-bottom: 7px solid #f9b43b; }
+
+.employee__desc {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  height: 0;
+  overflow: hidden; }
+
+.employee__avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0.3rem 0 0 1rem; }
+
+.employee__image {
+  object-fit: cover;
+  height: 100%; }
+
+.employee__position-wrap {
+  width: 61.5%;
+  padding-top: 4px; }
+
+.employee__position {
+  font-family: 'Ubuntu', Helvetica, sans-serif;
+  font-weight: bold;
+  padding-bottom: 1rem; }
+
+.employee__slogan {
+  font-family: 'Ubuntu', Helvetica, sans-serif;
+  font-weight: 300;
+  line-height: 1.8rem; }
+
 .reviews__list {
   display: flex;
   flex-flow: row wrap;
