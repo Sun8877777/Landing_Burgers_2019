@@ -1,8 +1,5 @@
 .features {
-  background-color: #ffffff;
-  background-image: url('/img/features-bg.jpg');
-  background-repeat: no-repeat;
-  background-position: center;
+  background: $colorWhite url('../../img/features-bg.jpg') no-repeat center;
   background-size: cover;
   padding-bottom: 10.3%;
   .section-title {

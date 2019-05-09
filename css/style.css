@@ -589,14 +589,10 @@ table {
   margin: 0 auto;
   cursor: pointer; }
   .arrow--down {
-    background-image: url("/img/arrow-scroll.png");
-    background-repeat: no-repeat; }
+    background: url("/img/arrow-scroll.png") no-repea; }
 
 .features {
-  background-color: #ffffff;
-  background-image: url("/img/features-bg.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
+  background: #ffffff url("../../img/features-bg.jpg") no-repeat center;
   background-size: cover;
   padding-bottom: 10.3%; }
   .features .section-title {

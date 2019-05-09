@@ -9,7 +9,6 @@
   margin: 0 auto;
   cursor: pointer;
   &--down{
-    background-image: url('/img/arrow-scroll.png');
-    background-repeat: no-repeat;
+    background: url('/img/arrow-scroll.png') no-repea;
   }
 }
