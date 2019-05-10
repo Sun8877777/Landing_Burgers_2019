@@ -1,0 +1,47 @@
+.main-nav {
+  width: 76%;
+
+  &__list {
+    @include flex();
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    overflow: hidden;
+    margin-left: 38px;
+  }
+
+  &__item {
+    position: relative;
+    padding: 0 16px 0 21px;
+
+    &:first-child {
+      padding-left: 0;
+      margin-left: 0;
+    }
+
+    &:last-child {
+      padding-right: 0;
+    }
+
+    &:not(:first-child)::before {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 1px;
+      width: 4px;
+      height: 4px;
+      background-color: #ffffff;
+      border-radius: 50%;
+    }
+  }
+
+  &__link {
+    @include ubuntu(medium);
+    text-align: center;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

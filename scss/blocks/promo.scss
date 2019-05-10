@@ -1,0 +1,41 @@
+.promo {
+  @include flex();
+  flex: 0.9;
+
+  .promo__image-wrap {
+    background-image: url('/img/drops.png');
+    background-repeat: no-repeat;
+    background-position: 85% 19%;
+    width: 50%;
+    padding-bottom: 149px;
+    overflow: hidden;
+
+    .promo__image {
+      padding: 0 0 0 50px;
+      margin-top: -4px;
+    }
+  }
+
+  .promo__text {
+    letter-spacing: -1.25px;
+    text-transform: lowercase;
+  }
+
+  .promo__title-wrap {
+    width: 50%;
+    padding-left: 0.8rem;
+    padding-top: 4rem;
+
+    .section-title {
+      margin-top: 6rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .promo__text {
+    @include lifehack();
+    font-size: 4.6rem;
+    color: $colorWhite;
+  }
+
+}
