@@ -1,0 +1,15 @@
+.contact {
+  min-width: 30%;
+}
+.contact__adress {
+  @include ubuntu();
+  display: inline-block;
+  padding-top: 3%;
+}
+.contact__phone {
+  @include ubuntu(bold);
+  color: $bgBtnColor;
+  display: block;
+  padding-top: 3.5%;
+  padding-left: 7.5%;
+}
