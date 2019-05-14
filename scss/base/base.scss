@@ -77,6 +77,18 @@ h6 {
   font-weight: normal;
 }
 
+input, textarea, button, input + label {
+  cursor: pointer;
+}
+
+input:focus,
+textarea:focus,
+button:focus {
+  outline: 0;
+  box-shadow: 0 0 0 2px $colorOrange;
+  border: none;
+}
+
 table {
   border-collapse: collapse;
   border-spacing: 0;

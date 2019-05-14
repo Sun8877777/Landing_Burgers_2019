@@ -1,15 +1,28 @@
 .contact {
   min-width: 30%;
 }
+
 .contact__adress {
   @include ubuntu();
   display: inline-block;
   padding-top: 3%;
 }
+
 .contact__phone {
   @include ubuntu(bold);
+  position: relative;
   color: $bgBtnColor;
   display: block;
   padding-top: 3.5%;
   padding-left: 7.5%;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1rem;
+    height: 1rem;
+    background: url('/img/sprite.svg#phone') 12.5% 0 no-repeat;
+  }
 }

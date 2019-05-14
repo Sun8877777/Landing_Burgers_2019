@@ -401,6 +401,16 @@ h6 {
   margin-top: 0;
   font-weight: normal; }
 
+input, textarea, button, input + label {
+  cursor: pointer; }
+
+input:focus,
+textarea:focus,
+button:focus {
+  outline: 0;
+  box-shadow: 0 0 0 2px #f9b43b;
+  border: none; }
+
 table {
   border-collapse: collapse;
   border-spacing: 0; }
@@ -873,11 +883,132 @@ table {
     background-color: #1f2122;
     cursor: pointer; }
 
+.delivery {
+  background: #000000 url("/img/delivery-bg.jpg") no-repeat center center;
+  background-size: cover; }
+  .delivery .section-title {
+    text-align: center;
+    line-height: 2;
+    padding: 4.42rem 0 0.5rem 0; }
+
+.delivery__form {
+  display: flex;
+  justify-content: space-between; }
+
+.order {
+  color: #ffffff;
+  padding-bottom: 8rem; }
+  .order > div {
+    width: 48.98%; }
+
+.order__adress > div:not(:last-child) {
+  padding-bottom: 1.5rem; }
+.order__adress .order__contact-label {
+  display: block;
+  width: 100%;
+  font-family: 'Ubuntu', Helvetica, sans-serif;
+  font-weight: 300; }
+  .order__adress .order__contact-label > input {
+    border-radius: 0.3rem;
+    display: block;
+    width: 100%;
+    height: 2.4rem;
+    margin-top: 0.5rem; }
+.order__adress .order__contact {
+  display: flex;
+  justify-content: space-between; }
+  .order__adress .order__contact label {
+    width: 100%; }
+  .order__adress .order__contact input {
+    width: 100%; }
+  .order__adress .order__contact label:first-child {
+    margin-right: 1.35rem; }
+.order__adress .order__house {
+  display: flex;
+  justify-content: space-between; }
+  .order__adress .order__house label {
+    width: calc(100% /4 - 1rem); }
+
+.order__info .order__comment-wrap {
+  padding-bottom: 1.35rem; }
+  .order__info .order__comment-wrap textarea {
+    resize: none;
+    width: 100%;
+    height: 7.85rem;
+    margin-top: 0.5rem;
+    border-radius: 0.5rem; }
+.order__info .order__cash {
+  padding-bottom: 2rem; }
+  .order__info .order__cash label {
+    padding-left: 1.7rem;
+    padding-right: 1.1rem;
+    position: relative; }
+    .order__info .order__cash label::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0.9rem;
+      height: 0.9rem;
+      background-color: #ffffff;
+      border-radius: 50%;
+      z-index: 5; }
+  .order__info .order__cash input {
+    display: none; }
+    .order__info .order__cash input:checked + label::after {
+      content: "";
+      position: absolute;
+      top: 0.2rem;
+      left: 0.2rem;
+      width: 0.5rem;
+      height: 0.5rem;
+      background-color: #f9b43b;
+      border-radius: 50%;
+      z-index: 7; }
+.order__info .order__callback-wrap {
+  padding-bottom: 1.5rem; }
+  .order__info .order__callback-wrap .order__contact-label--checkbox {
+    display: block;
+    padding-left: 1.7rem;
+    padding-right: 1.1rem;
+    position: relative; }
+    .order__info .order__callback-wrap .order__contact-label--checkbox::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1rem;
+      height: 1rem;
+      background-color: #ffffff; }
+  .order__info .order__callback-wrap input {
+    display: none; }
+    .order__info .order__callback-wrap input:checked + label::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0.9rem;
+      height: 0.9rem;
+      background: url("/img/chkbox.png") no-repeat center center;
+      z-index: 7; }
+.order__info .order__send button {
+  border: none; }
+.order__info .order__send .order__submit {
+  padding: 0.71rem 1.14rem;
+  margin-right: 0.14rem; }
+.order__info .order__send .order__reset {
+  background: transparent;
+  text-transform: none; }
+
 .footer {
-  background-color: #111111;
-  color: #ffffff; }
-  .footer .container {
-    height: 10%; }
+  position: relative; }
+  .footer__wrap {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 9%;
+    background-color: #111111;
+    color: #ffffff; }
 
 .contact {
   min-width: 30%; }
@@ -891,32 +1022,41 @@ table {
 .contact__phone {
   font-family: 'Ubuntu', Helvetica, sans-serif;
   font-weight: bold;
+  position: relative;
   color: #e45028;
   display: block;
   padding-top: 3.5%;
   padding-left: 7.5%; }
+  .contact__phone::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1rem;
+    height: 1rem;
+    background: url("/img/sprite.svg#phone") 12.5% 0 no-repeat; }
 
 .map {
   background: url("/img/footer-map-bg.jpg") no-repeat 0% 4%;
   background-size: cover;
-  min-height: 90.7%; }
+  min-height: 100%; }
 
 .social {
-  min-width: 14.75%; }
+  min-width: 14.85%; }
 
 .social__list {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
-  height: 90%; }
+  height: 92%; }
 
 .social__link {
   font-size: 0;
   width: 1.5rem;
   height: 1.5rem;
   opacity: 0.5;
-  transition: opacity 1s;
+  transition: opacity 500ms;
   cursor: pointer; }
   .social__link:hover {
     opacity: 1; }

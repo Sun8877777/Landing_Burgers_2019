@@ -1,12 +1,12 @@
 .social {
-  min-width: 14.75%;
+  min-width: 14.85%;
 }
 .social__list {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
-  height: 90%;
+  height: 92%;
 }
 .social__item {
 
@@ -16,12 +16,13 @@
   width: 1.5rem;
   height: 1.5rem;
   opacity: 0.5;
-  transition: opacity 1s; 
+  transition: opacity 500ms; 
   cursor: pointer;
   &:hover {
     opacity: 1;
   }
 }
+
 .social__logo {
   width: 1.5rem;
   height: 1.5rem;
