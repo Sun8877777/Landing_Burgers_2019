@@ -11,42 +11,42 @@ var gulp       = require('gulp'),
 	bulkSass     = require('gulp-sass-bulk-import');
 
 gulp.task('sass', function() { 
-	return gulp.src('app/scss/style.scss') 
+	return gulp.src('docs/scss/style.scss') 
 		.pipe(sass())
 		.pipe(autoprefixer(['last 5 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true })) 
-		.pipe(gulp.dest('app/css')) 
+		.pipe(gulp.dest('docs/css')) 
 		.pipe(browserSync.reload({stream: true}))
 });
 
 gulp.task('browser-sync', function() { 
 	browserSync({ 
 		server: { 
-			baseDir: 'app' 
+			baseDir: 'docs' 
 		},
 		notify: false
 	});
 });
 
 gulp.task('code', function() {
-	return gulp.src('app/*.html')
+	return gulp.src('docs/*.html')
 	.pipe(browserSync.reload({ stream: true }))
 });
 
 gulp.task('css-libs', function() {
-	return gulp.src('app/css/style.css') 
+	return gulp.src('docs/css/style.css') 
 		.pipe(sass().on('error', sass.logError)) 
 		.pipe(cssnano()) 
 		.pipe(rename({suffix: '.min'})) 
-		.pipe(gulp.dest('app/css')); 
+		.pipe(gulp.dest('docs/css')); 
 });
 
 gulp.task('scripts', function() {
-	return gulp.src(['app/js/*.js'])
+	return gulp.src(['docs/js/*.js'])
 	.pipe(browserSync.reload({ stream: true }))
 });
 
 gulp.task('svg', function() {
-	return gulp.src('app/img/svg/*.svg')
+	return gulp.src('docs/img/svg/*.svg')
 		.pipe(svgmin({
 			js2svg: {
 				pretty: true
@@ -61,37 +61,32 @@ gulp.task('svg', function() {
 		}))
 		.pipe(replace('&gt;', '>'))
 		.pipe(svgSprite({
-			// mode: {
-			// 	symbol: {
-			// 		sprite: '../sprite.svg'
-			// 	}
-			// }
 			mode: {
 				stack: {
 						sprite: "../sprite.svg"  //sprite file name
 				}
 		  },
 		})) 
-		.pipe(gulp.dest('app/img'))
+		.pipe(gulp.dest('docs/img'))
 });
 
 //автодобавление scss пока  в тесте
  
 gulp.task('css', function() {
     return gulp
-            .src('!app/scss/style.scss','app/scss/**/*.scss')
+            .src('!docs/scss/style.scss','docs/scss/**/*.scss')
             .pipe(bulkSass())
             .pipe(
                 sass({
-                    includePaths: ['!app/scss/style.scss','app/scss/**/*.scss']
+                    includePaths: ['!docs/scss/style.scss','docs/scss/**/*.scss']
                 }))
-            .pipe( gulp.dest('app') );
+            .pipe( gulp.dest('docs') );
 });
 
 
 gulp.task('watch', function() {
-	gulp.watch('app/scss/**/*.scss', gulp.parallel('sass')); 
-	gulp.watch('app/*.html', gulp.parallel('code')); 
-	gulp.watch(['app/js/*.js'], gulp.parallel('scripts')); 
+	gulp.watch('docs/scss/**/*.scss', gulp.parallel('sass')); 
+	gulp.watch('docs/*.html', gulp.parallel('code')); 
+	gulp.watch(['docs/js/*.js'], gulp.parallel('scripts')); 
 });
 gulp.task('default', gulp.parallel('svg','css-libs', 'sass', 'scripts', 'browser-sync', 'watch'));
