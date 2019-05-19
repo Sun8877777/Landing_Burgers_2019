@@ -507,7 +507,7 @@ table {
 
 .hero {
   background-color: #000000;
-  background-image: url("/img/texture.png"), url("/img/video-bg.jpg");
+  background-image: url("../img/texture.png"), url("../img/video-bg.jpg");
   background-position: center, top center;
   background-repeat: repeat, no-repeat;
   background-size: cover; }
@@ -794,7 +794,7 @@ table {
     height: 30%; }
 
 .features {
-  background: #ffffff url("../../img/features-bg.jpg") no-repeat center;
+  background: #ffffff url("../img/features-bg.jpg") no-repeat center;
   background-size: cover;
   padding-bottom: 10.3%; }
   @media only screen and (max-width: 768px) {
@@ -919,7 +919,7 @@ table {
         text-align: left; } }
 
 .teams {
-  background: #2f3234 url("/img/teams-bg.jpg") no-repeat center;
+  background: #2f3234 url("../img/teams-bg.jpg") no-repeat center;
   background-size: cover;
   position: relative; }
   .teams .section-title {
@@ -1095,7 +1095,7 @@ table {
 
 .menu {
   position: relative;
-  background: url("../../img/menu-bg.jpg") no-repeat;
+  background: url("../img/menu-bg.jpg") no-repeat;
   background-size: cover;
   overflow: hidden; }
   @media only screen and (max-width: 768px) {
@@ -1164,13 +1164,13 @@ table {
   background-color: rgba(0, 0, 0, 0.7); }
 
 .menu__link--1 {
-  background-image: url("/img/menu-item-1-bg.jpg"); }
+  background-image: url("../img/menu-item-1-bg.jpg"); }
 
 .menu__link--2 {
-  background-image: url("/img/menu-item-2-bg.jpg"); }
+  background-image: url("../img/menu-item-2-bg.jpg"); }
 
 .menu__link--3 {
-  background-image: url("/img/menu-item-3-bg.jpg"); }
+  background-image: url("../img/menu-item-3-bg.jpg"); }
 
 .menu__link-title {
   position: absolute;
@@ -1389,7 +1389,7 @@ table {
     cursor: pointer; }
 
 .delivery {
-  background: #000000 url("/img/delivery-bg.jpg") no-repeat center center;
+  background: #000000 url("../img/delivery-bg.jpg") no-repeat center center;
   background-size: cover; }
   .delivery .section-title {
     text-align: center;
@@ -1576,7 +1576,7 @@ table {
       left: 0;
       width: 0.9rem;
       height: 0.9rem;
-      background: url("/img/chkbox.png") no-repeat center center;
+      background: url("../img/chkbox.png") no-repeat center center;
       z-index: 7; }
 
 @media only screen and (max-width: 768px) {
@@ -1619,7 +1619,7 @@ table {
     @media only screen and (max-width: 480px) {
       .footer__wrap {
         height: 15%;
-        background: #111111 url("/img/footer-bg-smart.jpg"); }
+        background: #111111 url("../img/footer-bg-smart.jpg"); }
         .footer__wrap .container--row {
           -webkit-box-orient: vertical;
           -webkit-box-direction: normal;
@@ -1669,18 +1669,18 @@ table {
     top: 0.85714rem;
     width: 1.14286rem;
     height: 1.14286rem;
-    background: url("/img/sprite.svg#phone") 12.5% 0 no-repeat; }
+    background: url("../img/sprite.svg#phone") 12.5% 0 no-repeat; }
 
 .map {
-  background: url("/img/footer-map-bg.jpg") no-repeat;
+  background: url("../img/footer-map-bg.jpg") no-repeat;
   background-size: cover;
   min-height: 100%; }
   @media only screen and (max-width: 768px) {
     .map {
-      background: url("/img/footer-map-bg-tablet.jpg") no-repeat; } }
+      background: url("../img/footer-map-bg-tablet.jpg") no-repeat; } }
   @media only screen and (max-width: 480px) {
     .map {
-      background: url("/img/footer-map-bg-smart.png") no-repeat; } }
+      background: url("../img/footer-map-bg-smart.png") no-repeat; } }
 
 .social {
   min-width: 14.85%; }
