@@ -1,6 +1,6 @@
 .menu {
   position: relative;
-  background: url('../../img/menu-bg.jpg') no-repeat;
+  background: url('../img/menu-bg.jpg') no-repeat;
   background-size: cover;
   overflow: hidden;
 
@@ -74,7 +74,7 @@
 
 @each $num in (1, 2, 3) {
   .menu__link--#{$num} {
-    background-image: url('/img/menu-item-#{$num}-bg.jpg');
+    background-image: url('../img/menu-item-#{$num}-bg.jpg');
   }
 }
 

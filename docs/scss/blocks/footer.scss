@@ -12,7 +12,7 @@
     }
     @include adaptive(smart) {
       height: 15%;
-      background: $colorFooter-bg url('/img/footer-bg-smart.jpg');
+      background: $colorFooter-bg url('../img/footer-bg-smart.jpg');
       & .container--row {
         flex-direction: column;
         align-items: center;

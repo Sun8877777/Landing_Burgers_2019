@@ -1,5 +1,5 @@
 .features {
-  background: $colorWhite url('../../img/features-bg.jpg') no-repeat center;
+  background: $colorWhite url('../img/features-bg.jpg') no-repeat center;
   background-size: cover;
   padding-bottom: 10.3%;
   @include adaptive(tablet) {
