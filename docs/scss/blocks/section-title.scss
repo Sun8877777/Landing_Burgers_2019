@@ -1,0 +1,15 @@
+.section-title {
+  @include gagalin();
+  font-size: 5rem;
+  letter-spacing: 1px;
+  margin-bottom: 0;
+}
+.section-title--orange {
+  color: $colorOrange;
+} 
+.section-title--white {
+  color: #ffffff;
+} 
+.section-title--black {
+  color: $colorTitleDarken;
+}

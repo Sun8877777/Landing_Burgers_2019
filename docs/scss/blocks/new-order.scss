@@ -1,0 +1,10 @@
+.new-order {
+  margin-left: rem(16);
+  @include adaptive(tablet) {
+    margin-left: 0;
+    margin-right: rem(62);
+  }
+  @include adaptive(smart) {
+   
+  }
+}

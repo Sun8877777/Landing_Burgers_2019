@@ -1,0 +1,87 @@
+.main-nav {
+  max-width: 77%;
+  flex: 1;
+
+  &__list {
+    @include flex();
+    flex-wrap: wrap;
+    overflow: hidden;
+    margin-left: rem(49);
+    @include adaptive(tablet) {
+      height: 0;
+      width: 0;
+      overflow: hidden;
+    }
+    @include adaptive(smart) {
+      
+    }
+  }
+
+  &__item {
+    position: relative;
+    // padding: 0 0 0 rem(35);
+
+    &:first-child {
+      padding-left: 0;
+      margin-left: 0;
+    }
+
+    &:last-child {
+      padding-right: 0;
+    }
+
+    &:not(:first-child)::before {
+      content: '';
+      position: absolute;
+      top: 35%;
+      left: rem(-20);
+      width: rem(4);
+      height: rem(4);
+      background-color: #ffffff;
+      border-radius: 50%;
+    }
+  }
+
+  &__link {
+    @include ubuntu(medium);
+    text-align: center;
+    font-size: rem(13);
+    text-transform: uppercase;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.main-nav__toogle {
+  position: absolute;
+  display: none;
+  @include adaptive(tablet) {
+    display: block;
+    top: rem(34);
+    right: rem(6);
+    height: rem(24);
+    width: rem(25);
+    border: none;
+    background: transparent;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: rem(5);
+      border-radius: rem(3);
+      box-shadow: 0 rem(10) 0 0 $colorWhite, 0 rem(19) 0 0 $colorWhite;
+      background-color: $colorWhite;
+    }
+  }
+  @include adaptive(smart) {
+
+  }
+  &--close {
+
+  }
+  &--open {}
+}

@@ -1,0 +1,22 @@
+.arrow {
+  display: flex;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  bottom: -35%;
+  left: 50%;
+  transform: translateX(-45%);
+  margin: 0 auto;
+  @include adaptive(tablet) {
+    bottom: -28.5%;
+    transform: translateX(-40%);
+  }
+  @include adaptive(smart){
+    bottom: -21%;
+  }
+  cursor: pointer;
+  &__down{
+    width: 90%;
+    height: 30%;
+  }
+}
