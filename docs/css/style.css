@@ -653,7 +653,7 @@ table {
       -webkit-box-flex: 0.9;
           -ms-flex: 0.9;
               flex: 0.9;
-      margin-bottom: 27.5%; } }
+      margin-bottom: 26.5%; } }
   @media only screen and (max-width: 480px) {
     .promo {
       margin-bottom: 25%; } }
@@ -662,7 +662,7 @@ table {
     overflow: hidden; }
     @media only screen and (max-width: 768px) {
       .promo .promo__image-wrap {
-        width: 66%; } }
+        width: 100%; } }
     @media only screen and (max-width: 480px) {
       .promo .promo__image-wrap {
         width: 79%; } }
@@ -685,9 +685,9 @@ table {
             justify-content: center; }
     @media only screen and (max-width: 768px) {
       .promo .promo__title-wrap {
-        max-width: 60%;
+        max-width: 100%;
         text-align: center;
-        margin-top: 3%;
+        margin-top: 1%;
         padding-left: 1.07143rem; } }
     @media only screen and (max-width: 480px) {
       .promo .promo__title-wrap {
@@ -698,7 +698,8 @@ table {
       padding: 16% 10% 5% 2.5%; }
       @media only screen and (max-width: 768px) {
         .promo .promo__title-wrap .section-title {
-          padding: 3% 7% 6% 0%; } }
+          padding: 0% 6% 0% 3%;
+          line-height: 1.7; } }
       @media only screen and (max-width: 480px) {
         .promo .promo__title-wrap .section-title {
           font-size: 3.92857rem; } }
@@ -712,7 +713,7 @@ table {
     padding-left: 2%; }
     @media only screen and (max-width: 768px) {
       .promo .promo__text {
-        padding-left: 0; } }
+        padding: 0% 4.3% 1.5% 2%; } }
     @media only screen and (max-width: 480px) {
       .promo .promo__text {
         font-size: 3.21429rem; } }
