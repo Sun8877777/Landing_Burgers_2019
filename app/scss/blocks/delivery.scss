@@ -1,0 +1,25 @@
+.delivery {
+  background: $colorBlack url('/img/delivery-bg.jpg') no-repeat center center;
+  background-size: cover;
+  .section-title {
+    text-align: center;
+    line-height: 2;
+    padding: 6.5% 1% 1% 1%;
+    @include adaptive(tablet) {
+      padding: 15.2% 0 2% 0;
+    }
+    @include adaptive(smart) {
+      padding: 22.3% 0 5.3% 0;
+      font-size: rem(50);
+      line-height: 1.2;
+    }
+  }
+}
+.delivery__form {
+  display: flex;
+  justify-content: space-between;
+  @include adaptive(tablet) {
+    flex-direction: column;
+    align-items: center;
+  }
+}

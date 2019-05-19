@@ -1,0 +1,37 @@
+.contact {
+  min-width: 30%;
+  @include adaptive(tablet) {
+    min-width: 40%;
+  }
+  @include adaptive(smart) {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    padding-top: 2.5%;
+  }
+}
+
+.contact__adress {
+  @include ubuntu();
+  display: inline-block;
+  padding-top: 3%;
+}
+
+.contact__phone {
+  @include ubuntu(bold);
+  position: relative;
+  color: $bgBtnColor;
+  display: block;
+  padding-top: 3.5%;
+  padding-left: 7.2%;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: rem(-2);
+    top: rem(12);
+    width: rem(16);
+    height: rem(16);
+    background: url('/img/sprite.svg#phone') 12.5% 0 no-repeat;
+  }
+}

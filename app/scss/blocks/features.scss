@@ -1,0 +1,104 @@
+.features {
+  background: $colorWhite url('../../img/features-bg.jpg') no-repeat center;
+  background-size: cover;
+  padding-bottom: 10.3%;
+  @include adaptive(tablet) {
+    padding-bottom: 26.3%;
+  }
+  @include adaptive(smart) {
+    padding-bottom: 11.3%;
+  }
+  .section-title {
+    text-align: center;
+    padding: 9.5% 0 0.3% 0;
+    @include adaptive(tablet) {
+      padding: 6.5% 0 2.5% 0;
+    }
+    @include adaptive(smart) {
+      font-size: rem(47);
+    }
+  }
+  &__list {
+    @include flex();
+    flex-wrap: wrap;
+  }
+  &__item {
+    width: 31.8%;
+    @include flex();
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    @include adaptive(tablet) {
+      width: 33%;
+    }
+    @include adaptive(smart) {
+      flex-flow: row wrap;
+      width: 100%;
+      margin-bottom: 23px
+    }
+  }
+  &__image-wrap {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include adaptive(smart) {
+      width: 29.5%;
+    }
+  }
+  &__image {
+    width: 35%;
+    @include adaptive(tablet) {
+      width: 40%;
+    }
+    @include adaptive(smart) {
+      width: 80%;
+    }
+  }
+  &__text-block {
+    padding-top: rem(10);
+    @include adaptive(tablet) {
+      padding: 0 0 0 0;
+    }
+    @include adaptive(smart) {
+      flex: 1;
+    }
+  }
+  &__item-title {
+    @include lifehack();
+    font-size: 1.7rem;
+    line-height: 1.2;
+    letter-spacing: -0.35px;
+    text-align: center;
+    margin: 0;
+    padding: 0 rem(3) rem(15) 0;
+    @include adaptive(tablet) {
+      padding: 0 rem(12) rem(15) 0;
+    }
+    @include adaptive(smart) {
+      text-align: left;
+    }
+  }
+  &__item:last-child &__item-title {
+    padding: 0 rem(7) rem(9) rem(2);
+    @include adaptive(tablet) {
+      padding: 0 rem(5) rem(9) rem(11);
+    }
+    @include adaptive(smart) {
+      padding: 0 rem(12) rem(12) 0;
+      margin-top: rem(-41);
+    }
+  }
+  &__item-desc {
+    @include ubuntu(light);
+    color: $colorTitleDarken;
+    text-align: center;
+    line-height: 1.75rem;
+    @include adaptive(tablet) {
+      padding: 0 2.5% 0 0;
+    }
+    @include adaptive(smart) {
+      text-align: left;
+    }
+  }
+}

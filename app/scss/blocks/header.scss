@@ -1,0 +1,15 @@
+.header {
+  color: $colorWhite;
+  position: relative;
+  @include flex();
+  align-items: center;
+  padding-top: rem(6);
+
+  &__right {
+    position: relative;
+  }
+
+  &__promo {
+    position: relative;
+  }
+}
