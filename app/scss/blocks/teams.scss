@@ -1,0 +1,50 @@
+.teams {
+  background: $colorTitleDarken url('/img/teams-bg.jpg') no-repeat center;
+  background-size: cover;
+  position: relative;
+
+  .section-title {
+    padding-top: 0.5rem;
+    padding-bottom: 3rem;
+    @include adaptive(tablet) {
+      padding-top: 23%;
+      padding-bottom: 8.5%;
+    }
+    @include adaptive(smart) {
+      font-size: rem(48);
+      padding: 28% 0 8.5% 0;
+    }
+  }
+}
+
+.teams__wrap {
+  position: absolute;
+  top: 0;
+  left: 51%;
+  width: 50%;
+  height: 100%;
+  background-color: #595959;
+  opacity: 0.93;
+  padding: 9%;
+  overflow: hidden;
+  @include adaptive(tablet) {
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.teams__list {
+  @include adaptive(tablet) {
+    text-align: center
+  }
+}
+
+.teams__item {
+  padding-bottom: 1.6rem;
+  @include adaptive(tablet) {
+    padding-bottom: rem(21);
+  }
+}

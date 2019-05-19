@@ -1,0 +1,11 @@
+.btn {
+  @include ubuntu(medium);
+  padding: rem(12) rem(15);
+  border-radius: rem(5);
+  background-color: $bgBtnColor;
+  text-transform: uppercase;
+  color: $colorWhite;
+  font-size: rem(13);
+  display: inline-block;
+  text-decoration: none;
+}

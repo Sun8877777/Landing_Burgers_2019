@@ -1,0 +1,22 @@
+.footer {
+  position: relative;
+  &__wrap {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 9%;
+    background-color: $colorFooter-bg;
+    color: $colorWhite;
+    @include adaptive(tablet) {
+      height: 5.5%;
+    }
+    @include adaptive(smart) {
+      height: 15%;
+      background: $colorFooter-bg url('/img/footer-bg-smart.jpg');
+      & .container--row {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  }
+}

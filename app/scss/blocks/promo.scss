@@ -1,0 +1,82 @@
+.promo {
+  @include flex();
+  justify-content: center;
+  flex: 0.8;
+  margin-bottom: 17%;
+  @include adaptive(tablet) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    flex: 0.9;
+    margin-bottom: 27.5%;
+  }
+  @include adaptive(smart) {
+    margin-bottom: 25%;
+  }
+
+  .promo__image-wrap {
+    width: 49%;
+    overflow: hidden;
+    @include adaptive(tablet) {
+     width: 66%;
+    }
+    @include adaptive(smart) {
+      width: 79%;
+    }
+
+    .promo__image {
+      margin: rem(-8) 0 0 rem(6);
+      @include adaptive(tablet) {
+        margin: 0 auto;
+       }
+       @include adaptive(smart) {
+         
+       }
+    }
+  }
+
+  .promo__title-wrap {
+    max-width: 49%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    @include adaptive(tablet) {
+      max-width: 60%;
+      text-align: center;
+      margin-top: 3%;
+      padding-left: rem(15);
+    }
+    @include adaptive(smart) {
+      max-width: 90%;
+      margin-top: 11%;
+      padding-left: rem(15);
+    }
+
+    .section-title {
+      padding: 16% 10% 5% 2.5%;
+      @include adaptive(tablet) {
+        padding: 3% 7% 6% 0%;
+      }
+      @include adaptive(smart) {
+        font-size: rem(55)
+      }
+    }
+  }
+
+  .promo__text {
+    @include lifehack();
+    font-size: 4.6rem;
+    color: $colorWhite;
+    letter-spacing: -1.25px;
+    text-transform: lowercase;
+    padding-right: 8%;
+    padding-left: 2%;
+    @include adaptive(tablet) {
+      padding-left: 0;
+    }
+    @include adaptive(smart) {
+      font-size: rem(45)
+    }
+  }
+
+}

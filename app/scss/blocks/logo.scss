@@ -1,0 +1,26 @@
+.logo {
+  display: block;
+  width: 9.5%;
+  cursor: pointer;
+  margin-right: rem(20);
+  @include adaptive(tablet) {
+    width: 13%;
+  }
+  @include adaptive(smart) {
+    width: 20%;
+  }
+
+  &__image {
+    width: 100%;
+    height: rem(76);
+    margin-left: rem(-1);
+    @include adaptive(tablet) {
+      margin-left: 0;
+    }
+    @include adaptive(smart) {
+      margin-left: rem(12);
+    }
+  
+  }
+
+}
