@@ -1,63 +1,65 @@
 .main-nav {
   max-width: 77%;
   flex: 1;
+}
 
-  &__list {
-    @include flex();
-    flex-wrap: wrap;
+.main-nav__list {
+  @include flex();
+  flex-wrap: wrap;
+  overflow: hidden;
+  margin-left: rem(49);
+  font-size: rem(13);
+
+  @include adaptive(tablet) {
+    height: 0;
+    width: 0;
     overflow: hidden;
-    margin-left: rem(49);
-    @include adaptive(tablet) {
-      height: 0;
-      width: 0;
-      overflow: hidden;
-    }
-    @include adaptive(smart) {
-      
-    }
   }
 
-  &__item {
-    position: relative;
-    // padding: 0 0 0 rem(35);
+  @include adaptive(smart) {}
+}
 
-    &:first-child {
-      padding-left: 0;
-      margin-left: 0;
-    }
+.main-nav__item {
+  position: relative;
 
-    &:last-child {
-      padding-right: 0;
-    }
-
-    &:not(:first-child)::before {
-      content: '';
-      position: absolute;
-      top: 35%;
-      left: rem(-20);
-      width: rem(4);
-      height: rem(4);
-      background-color: #ffffff;
-      border-radius: 50%;
-    }
+  &:first-child {
+    padding-left: 0;
+    margin-left: 0;
   }
 
-  &__link {
-    @include ubuntu(medium);
-    text-align: center;
-    font-size: rem(13);
-    text-transform: uppercase;
+  &:last-child {
+    padding-right: 0;
+  }
 
-    &:hover {
-      cursor: pointer;
-    }
+  &:not(:first-child)::before {
+    content: '';
+    position: absolute;
+    top: 35%;
+    left: rem(-20);
+    width: rem(4);
+    height: rem(4);
+    background-color: #ffffff;
+    border-radius: 50%;
+  }
+}
+
+.main-nav__link {
+  @include ubuntu(medium);
+  text-align: center;
+  font-size: inherit;
+  text-transform: uppercase;
+
+  &:hover {
+    cursor: pointer;
   }
 }
 
 .main-nav__toogle {
-  position: absolute;
   display: none;
+
   @include adaptive(tablet) {
+    position: absolute;
+    font-size: 0;
     display: block;
     top: rem(34);
     right: rem(6);
@@ -65,6 +67,9 @@
     width: rem(25);
     border: none;
     background: transparent;
+    z-index: 1;
+    cursor: pointer;
+
     &::before {
       content: '';
       position: absolute;
@@ -77,11 +82,84 @@
       background-color: $colorWhite;
     }
   }
-  @include adaptive(smart) {
+}
 
-  }
-  &--close {
 
+.main-nav__open {
+  .main-nav__list {
+    @include adaptive(tablet) {
+      position: fixed;
+      z-index: 5;
+      flex-direction: column;
+      justify-content: space-between;
+      flex-wrap: nowrap;
+      align-items: center;
+      height: 57%;
+      width: 65%;
+      top: 30%;
+      margin: 0;
+      font-size: rem(24);
+    }
   }
-  &--open {}
+
+  .main-nav__item {
+    @include adaptive(tablet) {
+      &:not(:first-child)::before {
+        content: '';
+        position: absolute;
+        top: rem(-30);
+        left: 47.5%;
+        width: rem(6);
+        height: rem(6);
+        background-color: #ffffff;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  .main-nav__link {
+    @include adaptive(tablet) {
+      font-size: inherit;
+      font-family: $ffUbuntu;
+      letter-spacing: 0;
+      font-weight: normal;
+    }
+  }
+
+  .main-nav__toogle {
+    @include adaptive(tablet) {
+      position: absolute;
+      display: block;
+      font-size: 0;
+      top: rem(30);
+      right: rem(8);
+      height: rem(24);
+      width: rem(25);
+      border: none;
+      background: transparent;
+      z-index: 5;
+      cursor: pointer;
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        top: rem(9);
+        left: 0;
+        width: 100%;
+        height: rem(5);
+        border-radius: rem(3);
+        background-color: $colorWhite;
+        box-shadow: none;
+      }
+
+      &::before {
+        transform: rotate(45deg);
+      }
+
+      &::after {
+        transform: rotate(-45deg);
+      }
+    }
+  }
 }

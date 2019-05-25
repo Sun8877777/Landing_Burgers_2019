@@ -93,7 +93,7 @@
   transform: rotate(-90deg);
 
   @include adaptive(tablet) {
-    margin-top: rem(140);
+    margin-top: rem(70);
   }
 
   @include adaptive(smart) {
