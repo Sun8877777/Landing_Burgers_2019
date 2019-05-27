@@ -69,7 +69,7 @@
   color: $colorWhite;
   writing-mode: vertical-lr;
   transform: rotate(180deg);
-  padding: rem(40) rem(20);
+  padding: 50% 25%;
 
   @include adaptive(tablet) {
     padding: rem(38) rem(18);

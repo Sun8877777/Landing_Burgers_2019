@@ -663,8 +663,9 @@ table {
         -ms-flex-align: center;
             align-items: center;
     height: 57%;
-    width: 65%;
+    width: 100%;
     top: 30%;
+    left: 0;
     margin: 0;
     font-size: 1.71429rem; } }
 
@@ -884,7 +885,7 @@ table {
               transform: translateX(-40%); } }
   @media only screen and (max-width: 480px) {
     .arrow {
-      bottom: -21%; } }
+      bottom: -18%; } }
   .arrow__down {
     width: 90%;
     height: 30%; }
@@ -1112,7 +1113,7 @@ table {
   @media only screen and (max-width: 480px) {
     .slide__calories {
       top: -38.5%;
-      left: 87.5%;
+      left: 77.5%;
       line-height: 2; } }
   .slide__calories > span {
     display: block;
@@ -1470,7 +1471,7 @@ table {
   -webkit-transform: rotate(180deg);
       -ms-transform: rotate(180deg);
           transform: rotate(180deg);
-  padding: 2.85714rem 1.42857rem; }
+  padding: 50% 25%; }
   @media only screen and (max-width: 768px) {
     .menu__title {
       padding: 2.71429rem 1.28571rem; } }
