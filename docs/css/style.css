@@ -1501,7 +1501,8 @@ table {
   width: 100%; }
   .open .menu__title {
     color: #f9b43b;
-    width: 14%; }
+    width: 14%;
+    padding: 5% 4%; }
     @media only screen and (max-width: 768px) {
       .open .menu__title {
         width: 5.71429rem; } }

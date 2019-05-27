@@ -103,6 +103,7 @@
   .menu__title {
     color: $colorOrange;
     width: 14%;
+    padding: 5% 4%;
     @include adaptive(tablet) {
       width: rem(80);
     }
