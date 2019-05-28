@@ -131,7 +131,7 @@
         height: 0.9rem;
         background-color: $colorWhite;
         border-radius: 50%;
-        z-index: 5;
+        z-index: 1;
       }
     }
 
@@ -147,7 +147,7 @@
         height: 0.5rem;
         background-color: #f9b43b;
         border-radius: 50%;
-        z-index: 7;
+        z-index: 1;
       }
     }
   }
@@ -188,7 +188,7 @@
         width: 0.9rem;
         height: 0.9rem;
         background: url('../img/chkbox.png') no-repeat center center;
-        z-index: 7;
+        z-index: 1;
       }
     }
   }

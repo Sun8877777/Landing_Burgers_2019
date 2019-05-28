@@ -17,7 +17,7 @@
 
     @include adaptive(smart) {
       font-size: rem(48);
-      padding: 12.5% 0 0 13%;
+      padding: 11.5% 0 0 13%;
     }
   }
 }
@@ -31,9 +31,11 @@
   display: flex;
   flex-flow: row;
   justify-content: flex-end;
+
   @include adaptive(tablet) {
     max-width: 100%;
   }
+
   @include adaptive(smart) {
     max-width: 100%;
   }
@@ -45,59 +47,44 @@
   width: 10.2%;
 
   @include adaptive(tablet) {
-    width: 10.5%;
+    width: rem(80);
   }
 
   @include adaptive(smart) {
-    width: 23.6%;
+    width: 16.6%;
   }
 }
 
 
-.menu__link {
+.menu__title {
   height: 100%;
   width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 75%;
-}
-
-.menu__link-title-wrap {
+  cursor: pointer;
   position: relative;
   @include gagalin();
   font-size: 2.85rem;
   color: $colorWhite;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.7)
-}
-
-@each $num in (1, 2, 3) {
-  .menu__link--#{$num} {
-    background-image: url('../img/menu-item-#{$num}-bg.jpg');
-  }
-}
-
-
-.menu__link-title {
-  position: absolute;
-  top: 47%;
-  left: 20%;
-  width: rem(650);
-  height: rem(80);
-  margin-top: rem(-63);
-  margin-left: rem(-280);
-  color: #fff;
-  text-align: left;
-  white-space: nowrap;
-  transform: rotate(-90deg);
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+  padding: 50% 25%;
 
   @include adaptive(tablet) {
-    margin-top: rem(140);
+    padding: rem(38) rem(18);
   }
 
   @include adaptive(smart) {
-    margin-top: 0;
+    padding: 50% 15%;
+    font-size: rem(40);
+  }
+}
+
+
+@each $num in (1, 2, 3) {
+  .menu__title--#{$num} {
+    background-image: url('../img/menu-item-#{$num}-bg.jpg');
   }
 }
 
@@ -113,10 +100,17 @@
 .open {
   width: 100%;
 
-  .menu__link {
-    flex-basis: 15%;
+  .menu__title {
+    color: $colorOrange;
+    width: 14%;
+    padding: 5% 4%;
+    @include adaptive(tablet) {
+      width: rem(80);
+    }
+
     @include adaptive(smart) {
-      flex-basis: 32%;
+      padding: 35% 3%;      
+      width: 25%;
     }
   }
 
@@ -129,19 +123,47 @@
     opacity: 0.93;
     color: $colorWhite;
 
+    @include adaptive(tablet) {
+      padding: 9.2% 2% 8% 5.5%
+    }
+
     @include adaptive(smart) {
       position: absolute;
-      left: 16.8%;
+      left: 16.7%;
       top: 0;
       height: 100%;
       z-index: 5;
       padding: 11% 7% 7% 8.5%;
     }
   }
+}
 
-  .menu__link-title {
-    color: $colorOrange;
+.menu__item:nth-child(2) {
+  .menu__desc {
+    @include adaptive(smart) {
+      left: 33%;
+    }
   }
+
+  .menu__desc-close {
+    @include adaptive(smart) {
+      left: 105.3%;
+    }
+  }
+}
+
+.menu__item:nth-child(3) {
+  .menu__desc {
+    @include adaptive(smart) {
+      left: 49.8%;
+    }
+  }
+    .menu__desc-close {
+      @include adaptive(smart) {
+        left: 122%;
+      }
+    }
+  
 }
 
 .open .menu__desc-close {
@@ -169,6 +191,7 @@
       background-color: $colorWhite;
       transform: rotate(45deg);
     }
+
     &::after {
       content: "";
       position: absolute;

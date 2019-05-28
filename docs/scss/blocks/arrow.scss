@@ -7,16 +7,30 @@
   left: 50%;
   transform: translateX(-45%);
   margin: 0 auto;
+
   @include adaptive(tablet) {
-    bottom: -28.5%;
+    bottom: -27.5%;
     transform: translateX(-40%);
   }
-  @include adaptive(smart){
-    bottom: -21%;
+
+  @include adaptive(smart) {
+    bottom: -18%;
   }
+
   cursor: pointer;
-  &__down{
+  
+  &__down {
     width: 90%;
     height: 30%;
+  }
+
+  &__left {
+    width: rem(26);
+    transform: rotate(90deg);
+  }
+
+  &__right {
+    width: rem(26);
+    transform: rotate(-90deg);
   }
 }

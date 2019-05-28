@@ -30,8 +30,8 @@
               <use xlink:href="./img/sprite.svg#logo"></use>
             </svg>
           </a>
-          <nav class="main-nav">
-            <button class="main-nav__toogle main-nav__toogle--close"></button>
+          <nav class="main-nav   no-js">
+            <button class="main-nav__toogle" type="button">Открыть меню</button>
             <div class="main-nav__wrap">
               <ul class="main-nav__list">
                 <li class="main-nav__item"><a href="#" class="main-nav__link">О нас</a></li>
@@ -109,6 +109,69 @@
         </ul>
       </div>
     </section>
+    <section class="section slider">
+      <ul class="slider__list">
+        <li class="slider__item slide">
+          <a href="" class="arrow">
+            <svg class="arrow__left">
+              <use xlink:href="./img/sprite.svg#arrow-scroll"></use>
+            </svg>
+          </a>
+          <div class="container container--row">
+            <div class="slide__image-wrap">
+              <img src="./img/burger-01.png" alt="Бургер с чернилами каракатицы" class="slide__image">
+              <div class="slide__composition composition">
+                <h4 class="section-title section-title--white">Состав</h4>
+                <table class="composition__table">
+                  <caption class="visually-hidden">Список ингридиентов</caption>
+                  <tr class="composition__table-row">
+                    <td class="composition__table-cell composition__table-cell--meat">Говядина</td>
+                    <td class="composition__table-cell">300 г</td>
+                  </tr>
+                  <tr class="composition__table-row">
+                    <td class="composition__table-cell composition__table-cell--bread">Булочки</td>
+                    <td class="composition__table-cell">100 г</td>
+                  </tr>
+                  <tr class="composition__table-row">
+                    <td class="composition__table-cell composition__table-cell--green">Зелень</td>
+                    <td class="composition__table-cell">70 г</td>
+                  </tr>
+                  <tr class="composition__table-row">
+                    <td class="composition__table-cell composition__table-cell--sauce">Соус</td>
+                    <td class="composition__table-cell">150 г</td>
+                  </tr>
+                  <tr class="composition__table-row">
+                    <td class="composition__table-cell composition__table-cell--veggies">Овощи</td>
+                    <td class="composition__table-cell">200 г</td>
+                  </tr>
+                  <tr class="composition__table-row">
+                    <td class="composition__table-cell composition__table-cell--cheese">Сыр</td>
+                    <td class="composition__table-cell">80 г</td>
+                  </tr>
+                </table>
+              </div>
+              <div class="slide__calories">1200<span>Ккал</span></div>
+            </div>
+            <div class="slide__info">
+              <h2 class="section-title section-title--white">Dark Beef Burger</h2>
+              <p class="slide__text">Ваш старый добрый знакомый, с рубленым бифштексом из 100% говядины, тремя кусочками
+                нежнейшего сыра эмменталь, двумя помидорами, луком, салатом и соусом гриль теперь с добавлением
+                экзотического соуса чураско.</p>
+              <div class="slide__order">
+                <div class="slide__price">500<span> рублей</span></div>
+                <button class="btn to-order" type="button">Заказать</button>
+              </div>
+            </div>
+
+          </div>
+          <a href="" class="arrow">
+            <svg class="arrow__right">
+              <use xlink:href="./img/sprite.svg#arrow-scroll"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </section>
     <section class="section teams">
       <div class="teams__wrap">
         <h2 class="section-title section-title--orange">Команда</h2>
@@ -167,26 +230,9 @@
     <section class="section menu">
       <h2 class="section-title section-title--white">Меню</h2>
       <ul class="menu__list">
-        <li class="menu__item open">
+        <li class="menu__item" id="menu__item-1">
           <!--open-->
-          <a href="" class="menu__link menu__link--1">
-            <div class="menu__link-title-wrap">
-              <span class="menu__link-title">Для мясоедов</span>
-            </div>
-          </a>
-          <p class="menu__desc">Речевой акт редуцирует диалектический характер. Развивая эту тему, заимствование
-            редуцирует конструктивный механизм сочленений. Лирический субъект начинает диссонансный анжамбеман. Наш
-            современник стал особенно чутко относиться к слову, однако механизм сочленений неустойчив. Модальность
-            высказывания, как справедливо считает И.Гальперин, пространственно выбирает метр. Речевой акт редуцирует диалектический характер. Развивая эту тему, заимствование редуцирует конструктивный механизм сочленений. Лирический субъект начинает диссонансный анжамбеман. Наш современник стал особенно чутко относиться к слову.
-          </p>
-          <button type="button" class="menu__desc-close">закрыть</button>
-        </li>
-        <li class="menu__item ">
-          <a href="" class="menu__link menu__link--2">
-            <div class="menu__link-title-wrap">
-              <span class="menu__link-title">Вегетарианское</span>
-            </div>
-          </a>
+          <div class="menu__title menu__title--1">Для мясоедов</div>
           <p class="menu__desc">Речевой акт редуцирует диалектический характер. Развивая эту тему, заимствование
             редуцирует конструктивный механизм сочленений. Лирический субъект начинает диссонансный анжамбеман. Наш
             современник стал особенно чутко относиться к слову, однако механизм сочленений неустойчив. Модальность
@@ -194,13 +240,21 @@
             диалектический характер. Развивая эту тему, заимствование редуцирует конструктивный механизм сочленений.
             Лирический субъект начинает диссонансный анжамбеман. Наш современник стал особенно чутко относиться к слову.
           </p>
+          <button type="button" class="menu__desc-close">закрыть</button>
         </li>
-        <li class="menu__item ">
-          <a href="" class="menu__link menu__link--3">
-            <div class="menu__link-title-wrap">
-              <span class="menu__link-title">Диетическое</span>
-            </div>
-          </a>
+        <li class="menu__item" id="menu__item-2">
+          <div  class="menu__title menu__title--2">Вегетарианское</div>
+          <p class="menu__desc">Речевой акт редуцирует диалектический характер. Развивая эту тему, заимствование
+            редуцирует конструктивный механизм сочленений. Лирический субъект начинает диссонансный анжамбеман. Наш
+            современник стал особенно чутко относиться к слову, однако механизм сочленений неустойчив. Модальность
+            высказывания, как справедливо считает И.Гальперин, пространственно выбирает метр. Речевой акт редуцирует
+            диалектический характер. Развивая эту тему, заимствование редуцирует конструктивный механизм сочленений.
+            Лирический субъект начинает диссонансный анжамбеман. Наш современник стал особенно чутко относиться к слову.
+          </p>
+          <button type="button" class="menu__desc-close">закрыть</button>
+        </li>
+        <li class="menu__item" id="menu__item-3">
+          <div class="menu__title menu__title--3">Диетическое</div>
           <p class="menu__desc">Речевой акт редуцирует диалектический характер. Развивая эту тему, заимствование
             редуцирует конструктивный механизм сочленений. Лирический субъект начинает диссонансный анжамбеман. Наш
             современник стал особенно чутко относиться к слову, однако механизм сочленений неустойчив. Модальность
@@ -209,6 +263,7 @@
             механизм сочленений. Лирический субъект начинает диссонансный анжамбеман. Наш современник стал особенно
             чутко относиться к слову.
           </p>
+          <button type="button" class="menu__desc-close">закрыть</button>
         </li>
       </ul>
     </section>
@@ -390,6 +445,7 @@
     </footer>
 
   </div>
+  <script src="./js/run.js"></script>
 </body>
 
 </html>

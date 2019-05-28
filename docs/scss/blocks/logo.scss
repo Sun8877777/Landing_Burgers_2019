@@ -1,4 +1,6 @@
 .logo {
+  position: relative;
+  z-index: 5;
   display: block;
   width: 9.5%;
   cursor: pointer;
@@ -7,7 +9,7 @@
     width: 13%;
   }
   @include adaptive(smart) {
-    width: 20%;
+    width: 19%;
   }
 
   &__image {

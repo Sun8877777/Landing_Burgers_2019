@@ -5,25 +5,16 @@ body {
 
 html {
   font-size: $baseFontSize + px;
-  // @include adaptive(tablet) {
-  //   font-size: ($baseFontSize - 1) + px;
-  // }
-  // @include adaptive(smart) {
-  //   font-size: ($baseFontSize - 3) + px;
-  // }
 }
 
 .wrapper {
   position: relative;
   width: 100%;
-  // min-width: rem(940) + rem(20);
   min-height: 100%;
   overflow: hidden;
   @include adaptive(tablet) {
-    // min-width: rem(720) + rem(48);
   }
   @include adaptive(smart) {
-    // min-width: rem(460) + rem(20);
   }
 }
 
@@ -142,4 +133,17 @@ table {
 .container--max {
   width: 100%;
   max-width: 100%;
+}
+.overlay {
+  @include adaptive(tablet) {
+    &::before {
+      content: '';
+      position: absolute;
+      z-index: 4;
+      height: 100%;
+      width: 100%;
+      background-color: $rwBtnBgColor;
+    }
+  }
+  
 }

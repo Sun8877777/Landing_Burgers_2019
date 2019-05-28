@@ -1,0 +1,33 @@
+.composition {
+  position: absolute;
+  left: 6.5%;
+  top: -23.5%;
+  border-radius: rem(5);
+  width: rem(90);
+  height: rem(90);
+  background: $colorDarkenOrange url('../img/sprite.svg#burger') center 15% no-repeat;
+  background-size: 75% 66%;
+  display: flex;
+  @include adaptive(tablet) {
+    left: 3%;
+    top: -22%;
+  }
+  @include adaptive(smart) {
+    left: -6.5%;
+    top: -38%;
+  }
+  .section-title {
+    font-size: rem(14);
+    margin-top: auto;
+    text-align: center;
+    width: 100%;
+    letter-spacing: 0;
+    padding-bottom: rem(10);
+  }
+}
+.composition__table {
+  position:  absolute;
+  height: 0;
+  font-size: 0;
+  overflow: hidden;
+}
