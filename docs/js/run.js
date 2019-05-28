@@ -4,9 +4,11 @@ window.onload = function () {
   const mainNavToogle = mainNav.querySelector('.main-nav__toogle');
   const overlay = document.querySelector('.wrapper');
   const menuList = document.querySelector('.menu__list');
+  const teamsList = document.querySelector('.teams__list');
   const menuClose = menuList.querySelectorAll('.menu__desc-close')
   const ESC_KEYCODE = 27;
   const ENTER_KEYCODE = 13;
+
   // Открыть/закрыть главное меню
   function openMenu() {
     mainNav.classList.toggle('main-nav__open');
@@ -61,8 +63,22 @@ window.onload = function () {
     }
   };
   menuList.addEventListener('click', openMenuItem);
+  teamsList.addEventListener('click', openTeamsInfo);
+  
   for (let i = 0; i < menuClose.length; i++) {
-
     menuClose[i].addEventListener('click', closeMenuItem)
   }
-}
+};
+
+////////////////////////////////////////////////////////////////////////
+function openTeamsInfo(e) {
+  e.target.parentElement.classList.toggle('open');
+  const teamId = localStorage.getItem('teamId');
+  localStorage.setItem('teamId', e.target.parentElement.id);
+
+  if (teamId != e.target.parentElement.id) {
+    document.getElementById(teamId).classList.remove('open');
+    localStorage.removeItem('teamId');
+    localStorage.setItem('teamId', e.target.parentElement.id);
+  }
+};

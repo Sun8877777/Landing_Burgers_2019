@@ -8,14 +8,17 @@
   background: $colorDarkenOrange url('../img/sprite.svg#burger') center 15% no-repeat;
   background-size: 75% 66%;
   display: flex;
+
   @include adaptive(tablet) {
     left: 3%;
     top: -22%;
   }
+
   @include adaptive(smart) {
     left: -6.5%;
     top: -38%;
   }
+
   .section-title {
     font-size: rem(14);
     margin-top: auto;
@@ -25,9 +28,60 @@
     padding-bottom: rem(10);
   }
 }
+
 .composition__table {
-  position:  absolute;
+  position: absolute;
   height: 0;
   font-size: 0;
   overflow: hidden;
 }
+
+.slide__image-wrap.open {
+  .composition__table {
+    position: absolute;
+    width: rem(270);
+    background-color: rgba(255, 255, 255, 0.9);
+    left: 101%;
+    border-radius: rem(5);
+    border-collapse: collapse;
+    font-size: rem(14);
+    @include ubuntu(medium);
+    overflow: hidden;
+  }
+
+  .composition__table-row {
+
+  }
+
+  @each $num in ('beef', 'burger', 'salad', 'sauce', 'cucumber', 'cheese') {
+    .composition__table-row {
+      .composition__table-cell--#{$num} {
+        width: 80%;
+        padding: rem(30) 0 rem(7) rem(89);
+        text-align: left;
+        position: relative;
+        &::before {
+          content: "";
+          position: absolute;
+          left: 8%;
+          top: 33%;
+          width: rem(55);
+          height: rem(65);
+          background-image: url('../img/sprite.svg##{$num}');
+          background-repeat: no-repeat;
+        }
+      }
+    }
+  }
+    .composition__table-cell {
+      padding: rem(31) rem(19) rem(6) 0;
+      text-align: right;
+    }
+
+    .composition__table-row:last-child {
+      .composition__table-cell {
+        padding-bottom: rem(30);
+      }
+    }
+
+  }

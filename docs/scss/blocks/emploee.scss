@@ -6,26 +6,6 @@
   .employee__name::after {
     opacity: 0;
   }
-  &--active {
-
-    .employee__name {
-      color: $colorOrange;
-    }
-    .employee__name::before {
-      opacity: 0;
-    }
-    .employee__name::after {
-      opacity: 1;
-    }
-    .employee__desc {
-      height: 100%;
-      padding-bottom: 1.2rem;
-      @include adaptive(tablet) {
-        align-items: center;
-        padding-bottom: 0.7rem;
-      }
-    }
-  }
 }
 
 .employee__name {
@@ -35,6 +15,7 @@
   text-transform: uppercase;
   font-size: 1rem;
   padding-left: 1.2rem;
+  cursor: pointer;
   @include adaptive(tablet) {
     font-size: rem(24);
     padding-left: rem(20);
@@ -123,4 +104,24 @@
 .employee__slogan {
   @include ubuntu(light);
   line-height: 1.8rem;
+}
+.employee.open {
+
+  .employee__name {
+    color: $colorOrange;
+  }
+  .employee__name::before {
+    opacity: 0;
+  }
+  .employee__name::after {
+    opacity: 1;
+  }
+  .employee__desc {
+    height: 100%;
+    padding-bottom: 1.2rem;
+    @include adaptive(tablet) {
+      align-items: center;
+      padding-bottom: 0.7rem;
+    }
+  }
 }

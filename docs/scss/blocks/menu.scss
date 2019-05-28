@@ -82,11 +82,7 @@
 }
 
 
-@each $num in (1, 2, 3) {
-  .menu__title--#{$num} {
-    background-image: url('../img/menu-item-#{$num}-bg.jpg');
-  }
-}
+
 
 .menu__desc {
   flex-basis: 0;
