@@ -10,13 +10,13 @@
   display: flex;
 
   @include adaptive(tablet) {
-    left: 3%;
+    left: 3.5%;
     top: -22%;
   }
 
   @include adaptive(smart) {
     left: -6.5%;
-    top: -38%;
+    top: -37.5%;
   }
 
   .section-title {
@@ -49,9 +49,7 @@
     overflow: hidden;
   }
 
-  .composition__table-row {
-
-  }
+  .composition__table-row {}
 
   @each $num in ('beef', 'burger', 'salad', 'sauce', 'cucumber', 'cheese') {
     .composition__table-row {
@@ -60,6 +58,7 @@
         padding: rem(30) 0 rem(7) rem(89);
         text-align: left;
         position: relative;
+
         &::before {
           content: "";
           position: absolute;
@@ -73,15 +72,16 @@
       }
     }
   }
-    .composition__table-cell {
-      padding: rem(31) rem(19) rem(6) 0;
-      text-align: right;
-    }
 
-    .composition__table-row:last-child {
-      .composition__table-cell {
-        padding-bottom: rem(30);
-      }
-    }
-
+  .composition__table-cell {
+    padding: rem(31) rem(19) rem(6) 0;
+    text-align: right;
   }
+
+  .composition__table-row:last-child {
+    .composition__table-cell {
+      padding-bottom: rem(30);
+    }
+  }
+
+}
