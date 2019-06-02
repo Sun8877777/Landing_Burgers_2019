@@ -6,6 +6,10 @@ window.onload = function () {
   const menuList = document.querySelector('.menu__list');
   const teamsList = document.querySelector('.teams__list');
   const menuClose = menuList.querySelectorAll('.menu__desc-close');
+  const sliderComposition = document.querySelectorAll('.composition');
+  const compositionClose = document.querySelectorAll('.composition__close');
+  const reviewsBtn = document.querySelectorAll('.reviews__item-btn');
+  const reviewsModalClose = document.querySelector('.reviews__modal-close');
   const ESC_KEYCODE = 27;
   const ENTER_KEYCODE = 13;
 
@@ -129,7 +133,7 @@ window.onload = function () {
   const modalMsg = modal.querySelector('.delivery__modal-text')
   const modalClose = modal.querySelector('.delivery__btn');
 
-  function validate (form) { 
+  function validate(form) {
     let valid = true;
     if (!validateField(form.elements.name)) {
       valid = false;
@@ -142,43 +146,49 @@ window.onload = function () {
     }
     return valid;
   }
-  function validateField (field) {
+  function validateField(field) {
     field.nextElementSibling.textContent = field.validationMessage;
     return field.checkValidity();
-  } 
+  }
 
-  function exchange (e) {
+  function exchange(e) {
     e.preventDefault();
     let url = 'https://webdev-api.loftschool.com/sendmail';
     let urlFail = 'https://webdev-api.loftschool.com/sendmail/fail';
-    if (validate(form)) {
+    try {
+
+      if (!validate(form)) {
+        throw new Error('Форма не валидна');
+      }
+
       var fData = new FormData();
       fData.append('name', form.elements.name.value);
       fData.append('phone', form.elements.phone.value);
       fData.append('comment', form.elements.comment.value);
       fData.append('to', 'rt@gmail.com');
-  
+
       var xhr = new XMLHttpRequest();
       xhr.responseType = 'json';
       xhr.open('POST', url);
       xhr.send(fData);
       xhr.addEventListener('load', function () {
         if (xhr.status >= 400) {
-          console.log(xhr.response.message);
+          // console.log(xhr.response.message);
           modal.style.display = 'flex';
           overlay.classList.add('overlay');
           modalMsg.textContent = xhr.response.message;
-          
+
         } else {
-          console.log(xhr.response.message);
+          // console.log(xhr.response.message);
           modal.style.display = 'flex';
           overlay.classList.add('overlay');
           modalMsg.textContent = xhr.response.message;
           form.reset();
         }
       })
+    } catch (e) {
+      alert(e.message);
     }
-
     // return xhr;
   };
 
@@ -187,7 +197,39 @@ window.onload = function () {
     e.preventDefault();
     modal.style.display = 'none';
     overlay.classList.remove('overlay');
+  });
+
+  //Открыть кнопку состав слайдера
+
+  sliderComposition.forEach(function (elem) {
+    elem.addEventListener('click', () => {
+      if (elem.parentElement.classList.toggle('open'));
+    });
+  });
+  compositionClose.forEach(function (elem) {
+    elem.addEventListener('click', () => {
+      if (elem.parentElement.classList.remove('open'));
+    });
+  });
+  //Модальное окно секции отзывов
+  
+  reviewsBtn.forEach((elem) => {
+    elem.addEventListener('click', (elem)=>{
+      let reviewsModal = document.querySelector('.reviews__modal');
+      let titleModal = reviewsModal.querySelector('.section-title');
+      let textModal = reviewsModal.querySelector('.reviews__modal-text');
+      let title = elem.target.previousElementSibling.previousElementSibling.textContent;
+      let text = elem.target.previousElementSibling.textContent;
+      titleModal.textContent=title;
+      textModal.textContent=text;
+      reviewsModal.style.display="block";      
+    })
+  });
+  reviewsModalClose.addEventListener('click', () => {
+    reviewsModalClose.parentElement.style.display="none";
   })
+
+  //конец функции
 }
 
 

@@ -18,8 +18,13 @@
   position: relative;
   flex-basis: 53.5%;
   margin-top: rem(12);
+  &:hover {
+    cursor: pointer;
+  }
+  
 
   @include adaptive(tablet) {
+    max-width: 70%;
     margin-top: 27.5%;
     flex-basis: 42.5%;
   }
@@ -31,7 +36,9 @@
   }
 }
 
-.slide__composition {}
+.slide__composition {
+
+}
 
 .slide__calories {
   @include gagalin();
@@ -55,9 +62,10 @@
   }
 
   @include adaptive(smart) {
-    top: -38.5%;
-    left: 77.5%;
+    top: -37.5%;
+    left: 86.5%;
     line-height: 2;
+    padding-top: 1.5rem;
   }
 
   &>span {
@@ -125,7 +133,7 @@
     margin-top: rem(13);
   }
 
-  @include adaptive(tablet) {
+  @include adaptive(smart) {
     margin-top: 0;
   }
 }
@@ -150,6 +158,15 @@
 
     @include adaptive(smart) {
       font-size: rem(24);
+    }
+  }
+}
+.open {
+
+  .slide__calories {
+    @include adaptive(tablet) {
+      top: -22%;
+      left: 83%;
     }
   }
 }

@@ -1,4 +1,5 @@
 .reviews {
+  position: relative;
   &__list {
     @include flex-card();
     height: 100%;
@@ -84,9 +85,13 @@
 
 .reviews__item-text {
   line-height: 1.75rem;
-  color: #ffffff;
+  color: $colorWhite;
   padding-bottom: 1rem;
   font-weight: 300;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 55%;
+  margin-bottom: 7.5%;
   @include adaptive(tablet) {
     padding: 0 9% 0 13%;
   }
@@ -112,5 +117,67 @@
   &:hover {
     background-color: $rwBtnBgColorHv;
     cursor: pointer;
+  }
+}
+.reviews__modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: none;
+  width: rem(460);
+  height: rem(253);
+  margin-left: rem(-230);
+  margin-top: rem(-127);
+  background-color: $colorWhite;
+  border-radius: rem(5);
+  z-index: 5;
+  padding: 1.9%;
+  .section-title {
+    font-size: rem(14);
+    text-align: left;
+    padding-top: rem(6);
+    padding-bottom: rem(22);
+    letter-spacing: 0;
+    font-weight: normal;
+  }
+  .reviews__modal-text {
+    @include ubuntu();
+    letter-spacing: 0;
+    line-height: 1.76;
+    overflow: hidden;
+  }
+  .reviews__modal-close {
+    position: absolute;
+    display: block;
+    font-size: 0;
+    top: rem(16);
+    right: rem(16);
+    height: rem(20);
+    width: rem(20);
+    border: none;
+    background: transparent;
+    z-index: 5;
+    cursor: pointer;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: rem(9);
+      left: 0;
+      width: 100%;
+      height: rem(4);
+      border-radius: rem(3);
+      background-color: $colorCompositionOpen;
+      box-shadow: none;
+    }
+
+    &::before {
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+    }
   }
 }
