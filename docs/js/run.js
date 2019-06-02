@@ -168,15 +168,17 @@ window.onload = function () {
           modal.style.display = 'flex';
           overlay.classList.add('overlay');
           modalMsg.textContent = xhr.response.message;
-  
+          
         } else {
           console.log(xhr.response.message);
           modal.style.display = 'flex';
           overlay.classList.add('overlay');
           modalMsg.textContent = xhr.response.message;
+          form.reset();
         }
       })
     }
+
     // return xhr;
   };
 
