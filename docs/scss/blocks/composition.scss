@@ -8,14 +8,19 @@
   background: $colorDarkenOrange url('../img/sprite.svg#burger') center 15% no-repeat;
   background-size: 75% 66%;
   display: flex;
+
   @include adaptive(tablet) {
-    left: 3%;
+    left: 3.5%;
     top: -22%;
   }
+
   @include adaptive(smart) {
-    left: -6.5%;
-    top: -38%;
+    left: -21%;
+    top: -37%;
+    width: 23%;
+    height: 23%;
   }
+
   .section-title {
     font-size: rem(14);
     margin-top: auto;
@@ -25,9 +30,143 @@
     padding-bottom: rem(10);
   }
 }
+
 .composition__table {
-  position:  absolute;
+  position: absolute;
   height: 0;
   font-size: 0;
   overflow: hidden;
+}
+
+.composition__close {
+  display: none;
+}
+
+.open {
+  @include adaptive(tablet) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .composition {
+    background-color: $colorCompositionOpen;
+
+    @include adaptive(tablet) {
+      left: 2%;
+      top: -21.5%;
+    }
+    @include adaptive(smart) {
+      left: -21%;
+      top: -37%;
+      width: 23%;
+      height: 23%;
+    }
+  }
+
+  .composition__table {
+    position: absolute;
+    width: rem(270);
+    background-color: rgba(255, 255, 255, 0.9);
+    left: 101%;
+    border-radius: rem(5);
+    border-collapse: collapse;
+    font-size: rem(14);
+    @include ubuntu(medium);
+    overflow: hidden;
+
+    @include adaptive(tablet) {
+      width: rem(320);
+    }
+    @include adaptive(smart) {
+      width: 80vw;    
+    }
+  }
+
+  .composition__close {
+    @include adaptive(tablet) {
+      position: absolute;
+      display: block;
+      font-size: 0;
+      top: rem(16);
+      right: rem(-300);
+      height: rem(25);
+      width: rem(24);
+      border: none;
+      background: transparent;
+      z-index: 5;
+      cursor: pointer;      
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        top: rem(9);
+        left: 0;
+        width: 100%;
+        height: rem(5);
+        border-radius: rem(3);
+        background-color: $colorlightOrange;
+        box-shadow: none;
+      }
+
+      &::before {
+        transform: rotate(45deg);
+      }
+
+      &::after {
+        transform: rotate(-45deg);
+      }
+    }
+    @include adaptive(smart) {
+      left: 89vw;
+    }
+  }
+
+  .composition__table-row {}
+
+  @each $num in ('beef', 'burger', 'salad', 'sauce', 'cucumber', 'cheese') {
+    .composition__table-row {
+      .composition__table-cell--#{$num} {
+        // width: 80%;
+        padding: rem(30) 0 rem(7) rem(89);
+        text-align: left;
+        position: relative;
+
+        @include adaptive(tablet) {
+          padding: rem(30) 0 rem(7) rem(89);
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          left: 8%;
+          top: 33%;
+          width: rem(55);
+          height: rem(60);
+          background-image: url('../img/sprite.svg##{$num}');
+          background-repeat: no-repeat;
+        }
+      }
+    }
+  }
+
+  .composition__table-cell {
+    padding: rem(31) rem(19) rem(6) 0;
+    text-align: right;
+
+    @include adaptive(tablet) {
+      padding: rem(31) rem(70) rem(6) 0;
+    }
+    @include adaptive(smart) {
+      padding: rem(31) rem(42) rem(6) 0;
+    }
+  }
+
+  .composition__table-row:last-child {
+    .composition__table-cell {
+      padding-bottom: rem(30);
+    }
+  }
+
 }

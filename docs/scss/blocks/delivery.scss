@@ -1,6 +1,7 @@
 .delivery {
   background: $colorBlack url('../img/delivery-bg.jpg') no-repeat center center;
   background-size: cover;
+  position: relative;
   .section-title {
     text-align: center;
     line-height: 2;
@@ -21,5 +22,26 @@
   @include adaptive(tablet) {
     flex-direction: column;
     align-items: center;
+  }
+}
+.delivery__modal {
+  position: absolute;
+  display: none;
+  background-color: $colorWhite;
+  z-index: 5;
+  width: rem(200);
+  height: rem(105);
+  border-radius: 5px;
+  top: 50%;
+  left: 50%;
+  margin-left: rem(-100);
+  margin-top: rem(-53);
+  // display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column wrap;
+  .delivery__modal-text {
+    padding-bottom: 7%;
+    text-align: center;
   }
 }

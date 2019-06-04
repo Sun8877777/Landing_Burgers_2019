@@ -135,15 +135,29 @@ table {
   max-width: 100%;
 }
 .overlay {
-  @include adaptive(tablet) {
-    &::before {
-      content: '';
-      position: absolute;
-      z-index: 4;
-      height: 100%;
-      width: 100%;
-      background-color: $rwBtnBgColor;
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: 4;
+    height: 100%;
+    width: 100%;
+    background-color: $rwBtnBgColor;
+    opacity: 0.9;
+    @include adaptive(tablet) {
+      opacity: 1;
     }
+  
   }
   
+}
+.error {
+  position: relative;
+  top: 1rem;
+  background-color: wheat;
+  color: red;
+  font-weight: bold;
+  width: 90%;
+  display: block;
+  text-align: center;
+  border-radius: 5px;
 }

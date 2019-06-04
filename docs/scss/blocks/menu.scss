@@ -55,7 +55,6 @@
   }
 }
 
-
 .menu__title {
   height: 100%;
   width: 100%;
@@ -76,11 +75,10 @@
   }
 
   @include adaptive(smart) {
-    padding: 50% 15%;
+    padding: 50% 17%;
     font-size: rem(40);
   }
 }
-
 
 @each $num in (1, 2, 3) {
   .menu__title--#{$num} {
@@ -104,12 +102,13 @@
     color: $colorOrange;
     width: 14%;
     padding: 5% 4%;
+
     @include adaptive(tablet) {
       width: rem(80);
     }
 
     @include adaptive(smart) {
-      padding: 35% 3%;      
+      padding: 30% 3%;
       width: 25%;
     }
   }
@@ -158,12 +157,13 @@
       left: 49.8%;
     }
   }
-    .menu__desc-close {
-      @include adaptive(smart) {
-        left: 122%;
-      }
+
+  .menu__desc-close {
+    @include adaptive(smart) {
+      left: 122%;
     }
-  
+  }
+
 }
 
 .open .menu__desc-close {

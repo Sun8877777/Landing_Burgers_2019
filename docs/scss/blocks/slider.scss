@@ -1,14 +1,56 @@
 .slider {
-    background-image: linear-gradient( to bottom, rgb(249,180,59) 0%, rgb(235,140,56) 48%, rgb(249,180,59) 74%);
+  background-image: linear-gradient(to bottom, rgb(249, 180, 59) 0%, rgb(235, 140, 56) 48%, rgb(249, 180, 59) 74%);
+  position: relative;
   &__list {
     height: 100%;
-
+    overflow: hidden;
+    position: relative;
+    will-change: transform;
+    display: inline-flex;
+    align-items: center;
   }
+
   &__item {
-    height: inherit;
-    .container {
-      align-items: center;
-      justify-content: flex-start;
+    display: flex;
+    transition: transform .5s;
+    will-change: transform;
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    width: 100vw;
+  }
+  .arrow {
+    position: absolute;
+    z-index: 3;
+  }
+  .arrow:first-child {
+    left: 5.5%;
+    top: 46%;
+
+    @include adaptive(tablet) {
+      left: 5%;
+      top: 47.5%;
+    }
+
+    @include adaptive(smart) {
+      left: 5.5%;
+      top: 44.5%;
     }
   }
+
+  .arrow:last-child {
+    right: -46.5%;
+    top: 46%;
+
+    @include adaptive(tablet) {
+      right: -36.5%;
+      top: 47.5%;
+    }
+
+    @include adaptive(smart) {
+      right: -33%;
+      top: 44.5%;
+    }
+  }
+
 }
