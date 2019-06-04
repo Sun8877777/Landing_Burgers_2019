@@ -100,6 +100,11 @@
     overflow: hidden;
   }
 }
+.reviews__item-expand {
+  font-size: 0;
+  height: 0;
+  overflow: hidden;
+}
 
 .reviews__item-btn {
   background-color: $rwBtnBgColor;
