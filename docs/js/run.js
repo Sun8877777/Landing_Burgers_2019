@@ -49,13 +49,13 @@ window.onload = function () {
 
     if (window.innerWidth <= 480 && e.target.parentElement.classList.contains('open')) {
       if (!e.target.parentElement.previousElementSibling) {
-        menuList.style.transform = 'translateX(0)';
+        menuList.style.transform = 'translateX(-25%)';
       } else if (!e.target.parentElement.nextElementSibling) {
         menuList.style.transform = 'translateX(-33.5%)';
       } else {
         menuList.style.transform = 'translateX(-17%)';
       }
-      e.target.nextElementSibling.style.width = `${100 - 16}%`;
+      e.target.nextElementSibling.style.width = `75%`;
     } else {
       menuList.style.transform = 'translateX(0)';
     }
@@ -173,13 +173,11 @@ window.onload = function () {
       xhr.send(fData);
       xhr.addEventListener('load', function () {
         if (xhr.status >= 400) {
-          // console.log(xhr.response.message);
           modal.style.display = 'flex';
           overlay.classList.add('overlay');
           modalMsg.textContent = xhr.response.message;
 
         } else {
-          // console.log(xhr.response.message);
           modal.style.display = 'flex';
           overlay.classList.add('overlay');
           modalMsg.textContent = xhr.response.message;
@@ -189,7 +187,7 @@ window.onload = function () {
     } catch (e) {
       alert(e.message);
     }
-    // return xhr;
+    return xhr;
   };
 
   submit.addEventListener('click', exchange);
@@ -212,22 +210,214 @@ window.onload = function () {
     });
   });
   //Модальное окно секции отзывов
-  
+
   reviewsBtn.forEach((elem) => {
-    elem.addEventListener('click', (elem)=>{
+    elem.addEventListener('click', (elem) => {
       let reviewsModal = document.querySelector('.reviews__modal');
       let titleModal = reviewsModal.querySelector('.section-title');
       let textModal = reviewsModal.querySelector('.reviews__modal-text');
       let title = elem.target.previousElementSibling.previousElementSibling.textContent;
       let text = elem.target.previousElementSibling.textContent;
-      titleModal.textContent=title;
-      textModal.textContent=text;
-      reviewsModal.style.display="block";      
+      titleModal.textContent = title;
+      textModal.textContent = text;
+      reviewsModal.style.display = "block";
     })
   });
   reviewsModalClose.addEventListener('click', () => {
-    reviewsModalClose.parentElement.style.display="none";
+    reviewsModalClose.parentElement.style.display = "none";
   })
+
+  //////Карта яндекс
+  ymaps.ready(function () {
+    var myMap = new ymaps.Map('map', {
+      center: [59.9386, 30.3141],
+      zoom: 12,
+      behaviors: ['default', 'scrollZoom']
+    }, {
+        searchControlProvider: 'yandex#search'
+      }),
+      // Создаём макет содержимого.
+      MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+        '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+      ),
+
+      myPlacemark1 = new ymaps.Placemark([59.899180, 30.314019], {
+        hintContent: 'Центр',
+        balloonContent: 'Красивая метка'
+      }, {
+          iconLayout: 'default#image',
+          iconImageHref: '../img/svg/map-marker.svg',
+          iconImageSize: [50, 80],
+          iconImageOffset: [-5, -38]
+        }),
+
+      myPlacemark2 = new ymaps.Placemark([59.911887, 30.481269], {
+        // hintContent: 'Со',
+        // balloonContent: 'А',
+        iconContent: '12'
+      }, {
+        iconLayout: 'default#imageWithContent',
+          iconImageHref: '../img/svg/map-marker.svg',
+          iconImageSize: [50, 80],
+          iconImageOffset: [-24, -24],
+          iconContentOffset: [15, 15],
+          iconContentLayout: MyIconContentLayout
+        }),
+        myPlacemark3 = new ymaps.Placemark([59.945826, 30.384169], {
+        // hintContent: 'Со',
+        // balloonContent: 'А',
+        iconContent: '12'
+      }, {
+        iconLayout: 'default#imageWithContent',
+          iconImageHref: '../img/svg/map-marker.svg',
+          iconImageSize: [50, 80],
+          iconImageOffset: [-24, -24],
+          iconContentOffset: [15, 15],
+          iconContentLayout: MyIconContentLayout
+        }),
+        myPlacemark4 = new ymaps.Placemark([59.972725, 30.310761], {
+          // hintContent: '',
+          // balloonContent: 'А',
+          iconContent: '12'
+        }, {
+          iconLayout: 'default#imageWithContent',
+            iconImageHref: '../img/svg/map-marker.svg',
+            iconImageSize: [50, 80],
+            iconImageOffset: [-24, -24],
+            iconContentOffset: [15, 15],
+            iconContentLayout: MyIconContentLayout
+          })
+        ;
+        myMap.behaviors.disable('scrollZoom');
+    myMap.geoObjects
+      .add(myPlacemark1)
+      .add(myPlacemark2)
+      .add(myPlacemark3)
+      .add(myPlacemark4)
+
+  });
+  /// onepagescrill
+  // $(document).ready(function () {
+    
+    
+  // });
+
+
+  let screen = $('.wrapper');
+  const pointsWrapper = $('.right-nav');
+  for (let i = 0; i < screen.length; i++) {
+    const pointDot = $('<li>', {
+      class: 'right-nav__item'
+    });
+    const pointLink = $('<a>', {
+      class: 'right-nav__link',
+      href: '#',
+      'data-index': i
+    })
+    if (screen.eq(i).hasClass('section--active')) {
+      pointDot.addClass('nav__link--active');
+    }
+    pointsWrapper.append(pointDot);
+    pointDot.append(pointLink);
+  }
+
+  let inScroll = false;
+  function ops(container, index) {
+    if (inScroll) return;
+    inScroll = true;
+
+    const sections = container.children('.section');
+    console.log(sections);
+    const points = pointsWrapper.children('.right-nav__item');
+    const sectionActive = container.find('.section--active');
+    const pointActive = pointsWrapper.find('.right-nav--active');
+
+    container.css('transform', 'translateY(' + -index * 100 + '%)');
+    sectionActive.removeClass('section--active');
+    pointActive.removeClass('right-nav--active');
+
+    sections.eq(index).addClass('section--active');
+    points.eq(index).addClass('right-nav--active');
+    points.eq(index).css('transition-delay', '.2s');
+
+   let transitionDuration = parseFloat(container.css('transition-duration'));
+    setTimeout(() => {
+      inScroll = false;
+    }, transitionDuration * 1000 + 100);
+
+    points.eq(index).css('transition-delay', '0s');
+  }
+
+
+  $('.wrapper').on('wheel', function (event) {
+   let $this = $(this);
+    const deltaY = event.originalEvent.deltaY;
+    const sectionActive = $this.find('.section--active');
+    let sectionIndex = deltaY > 0 ? sectionActive.next().index() : sectionActive.prev().index();
+    if (sectionActive.next().length && deltaY > 0) {
+      ops($this, sectionIndex);
+    } else if (sectionActive.prev().length && deltaY < 0) {
+      ops($this, sectionIndex);
+    }
+  });
+
+  if (window.innerWidth <= 480  || window.innerWidth <= 768) {
+    $('.wrapper').swipe({
+      swipeUp: function () {
+       let $this = $(this);
+
+        sectionActive = $('.wrapper').find('.section--active');
+        sectionIndex = sectionActive.next().index();
+        if (sectionActive.next().length) {
+          ops($this, sectionIndex);
+        }
+      },
+      swipeDown: function () {
+        $this = $(this);
+
+        sectionActive = $('.wrapper').find('.section--active');
+        sectionIndex = sectionActive.prev().index();
+        if (sectionActive.prev().length) {
+          ops($this, sectionIndex);
+        }
+      }
+    });
+  }
+
+  const findByIndex = (index) => {
+    mainContent = $('.wrapper');
+    dataIndex = parseInt(index.attr('data-index'));
+    ops(mainContent, dataIndex);
+  }
+
+  $('.nav__link').on('click', function (event) {
+    event.preventDefault();
+    findByIndex($(this));
+  });
+
+  $('.overlay__link').on('click', function (event) {
+    $this = $(this);
+    overlayShow = $this.closest('.overlay__show');
+    overlayShow.removeClass('overlay__show');
+  });
+
+  $('.points__link').on('click', function (event) {
+    event.preventDefault();
+    findByIndex($(this));
+  });
+
+  $('#to-order').on('click', function (event) {
+    event.preventDefault();
+    findByIndex($(this));
+  });
+
+  $('.welcome-link').on('click', function (event) {
+    event.preventDefault();
+    findByIndex($(this));
+  });
+
+  ////////////////////////////////////////////
+
 
   //конец функции
 }

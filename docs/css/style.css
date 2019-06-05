@@ -1546,9 +1546,15 @@ table {
   cursor: pointer; }
   @media only screen and (max-width: 768px) {
     .employee__name {
+      min-width: 43%;
       font-size: 1.71429rem;
       padding-left: 1.42857rem;
-      line-height: 0.5; } }
+      line-height: 1; } }
+  @media only screen and (max-width: 480px) {
+    .employee__name {
+      font-size: 1.71429rem;
+      padding-left: 1.42857rem;
+      line-height: 1; } }
   .employee__name::before {
     content: '';
     position: absolute;
@@ -1561,7 +1567,7 @@ table {
     border-top: 7px solid #f9b43b; }
     @media only screen and (max-width: 768px) {
       .employee__name::before {
-        left: 27.5%;
+        left: 28%;
         top: 2px; } }
     @media only screen and (max-width: 480px) {
       .employee__name::before {
@@ -1579,11 +1585,8 @@ table {
     border-bottom: 7px solid #f9b43b; }
     @media only screen and (max-width: 768px) {
       .employee__name::after {
-        left: 29%;
+        left: 14%;
         top: 0; } }
-    @media only screen and (max-width: 480px) {
-      .employee__name::after {
-        left: 14%; } }
 
 .employee__desc {
   display: -webkit-box;
@@ -1781,7 +1784,8 @@ table {
         flex-basis: 100%;
     background-color: #2f3234;
     opacity: 0.93;
-    color: #ffffff; }
+    color: #ffffff;
+    height: 100%; }
     @media only screen and (max-width: 768px) {
       .open .menu__desc {
         padding: 9.2% 2% 8% 5.5%; } }
@@ -1793,22 +1797,6 @@ table {
         height: 100%;
         z-index: 5;
         padding: 11% 7% 7% 8.5%; } }
-
-@media only screen and (max-width: 480px) {
-  .menu__item:nth-child(2) .menu__desc {
-    left: 33%; } }
-
-@media only screen and (max-width: 480px) {
-  .menu__item:nth-child(2) .menu__desc-close {
-    left: 105.3%; } }
-
-@media only screen and (max-width: 480px) {
-  .menu__item:nth-child(3) .menu__desc {
-    left: 49.8%; } }
-
-@media only screen and (max-width: 480px) {
-  .menu__item:nth-child(3) .menu__desc-close {
-    left: 122%; } }
 
 @media only screen and (max-width: 480px) {
   .open .menu__desc-close {
@@ -1847,6 +1835,22 @@ table {
       -webkit-transform: rotate(-45deg);
           -ms-transform: rotate(-45deg);
               transform: rotate(-45deg); } }
+
+@media only screen and (max-width: 480px) {
+  .menu__item:nth-child(2) .menu__desc {
+    left: 33%; } }
+
+@media only screen and (max-width: 480px) {
+  .menu__item:nth-child(2) .menu__desc-close {
+    left: 105.3%; } }
+
+@media only screen and (max-width: 480px) {
+  .menu__item:nth-child(3) .menu__desc {
+    left: 49.8%; } }
+
+@media only screen and (max-width: 480px) {
+  .menu__item:nth-child(3) .menu__desc-close {
+    left: 122%; } }
 
 .reviews {
   position: relative; }
