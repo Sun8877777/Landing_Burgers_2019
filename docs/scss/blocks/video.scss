@@ -1,0 +1,14 @@
+.video {
+  background: url('../img/features-bg.jpg') center center/cover no-repeat;
+  display: flex;
+  align-items: center;
+
+  .container {
+    align-items: center;  
+    justify-content: center;
+    .section-title {
+      font-size: 4.2rem;
+      padding-bottom: 3rem;
+    }
+  }
+}

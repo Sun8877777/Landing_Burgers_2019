@@ -2,7 +2,7 @@ window.onload = function () {
   'use strict';
   const mainNav = document.querySelector('.main-nav');
   const mainNavToogle = mainNav.querySelector('.main-nav__toogle');
-  const overlay = document.querySelector('.wrapper');
+  const overlay = document.querySelector('.maincontent');
   const menuList = document.querySelector('.menu__list');
   const teamsList = document.querySelector('.teams__list');
   const menuClose = menuList.querySelectorAll('.menu__desc-close');
@@ -49,15 +49,17 @@ window.onload = function () {
 
     if (window.innerWidth <= 480 && e.target.parentElement.classList.contains('open')) {
       if (!e.target.parentElement.previousElementSibling) {
-        menuList.style.transform = 'translateX(-25%)';
+        console.log(e.target.parentElement);
+        menuList.style.transform = 'translateX(5)';
       } else if (!e.target.parentElement.nextElementSibling) {
         menuList.style.transform = 'translateX(-33.5%)';
       } else {
         menuList.style.transform = 'translateX(-17%)';
       }
-      e.target.nextElementSibling.style.width = `75%`;
+      e.target.nextElementSibling.style.width = `${100 - 15}%`;
     } else {
       menuList.style.transform = 'translateX(0)';
+      // e.target.previousElementSibling.style.width = `${0}%`;
     }
   };
 
@@ -65,10 +67,12 @@ window.onload = function () {
     e.preventDefault();
     if (window.innerWidth <= 480 && e.target.parentElement.classList.contains('open')) {
       e.target.parentElement.classList.remove('.open');
+      console.log(e.target.parentElement);
     }
   };
   menuList.addEventListener('click', openMenuItem);
   for (let i = 0; i < menuClose.length; i++) {
+
     menuClose[i].addEventListener('click', closeMenuItem)
   }
 
@@ -84,6 +88,7 @@ window.onload = function () {
     }
   };
   teamsList.addEventListener('click', openTeamsInfo);
+
   /////////////Карусель
   var carusel = function (container, prev, next) {
     let caruselBlock = document.querySelector(container);
@@ -221,9 +226,11 @@ window.onload = function () {
       titleModal.textContent = title;
       textModal.textContent = text;
       reviewsModal.style.display = "block";
+      overlay.classList.add('overlay');
     })
   });
   reviewsModalClose.addEventListener('click', () => {
+    overlay.classList.remove('overlay');
     reviewsModalClose.parentElement.style.display = "none";
   })
 
@@ -252,43 +259,43 @@ window.onload = function () {
         }),
 
       myPlacemark2 = new ymaps.Placemark([59.911887, 30.481269], {
-        // hintContent: 'Со',
-        // balloonContent: 'А',
+        hintContent: 'Филиал №1',
+        balloonContent: 'Лучшие отзывы!!',
         iconContent: '12'
       }, {
-        iconLayout: 'default#imageWithContent',
-          iconImageHref: '../img/svg/map-marker.svg',
-          iconImageSize: [50, 80],
-          iconImageOffset: [-24, -24],
-          iconContentOffset: [15, 15],
-          iconContentLayout: MyIconContentLayout
-        }),
-        myPlacemark3 = new ymaps.Placemark([59.945826, 30.384169], {
-        // hintContent: 'Со',
-        // balloonContent: 'А',
-        iconContent: '12'
-      }, {
-        iconLayout: 'default#imageWithContent',
-          iconImageHref: '../img/svg/map-marker.svg',
-          iconImageSize: [50, 80],
-          iconImageOffset: [-24, -24],
-          iconContentOffset: [15, 15],
-          iconContentLayout: MyIconContentLayout
-        }),
-        myPlacemark4 = new ymaps.Placemark([59.972725, 30.310761], {
-          // hintContent: '',
-          // balloonContent: 'А',
-          iconContent: '12'
-        }, {
           iconLayout: 'default#imageWithContent',
-            iconImageHref: '../img/svg/map-marker.svg',
-            iconImageSize: [50, 80],
-            iconImageOffset: [-24, -24],
-            iconContentOffset: [15, 15],
-            iconContentLayout: MyIconContentLayout
-          })
-        ;
-        myMap.behaviors.disable('scrollZoom');
+          iconImageHref: '../img/svg/map-marker.svg',
+          iconImageSize: [50, 80],
+          iconImageOffset: [-24, -24],
+          iconContentOffset: [15, 15],
+          iconContentLayout: MyIconContentLayout
+        }),
+      myPlacemark3 = new ymaps.Placemark([59.945826, 30.384169], {
+        hintContent: 'Филиал №2',
+        balloonContent: 'Удобное местоположение',
+        iconContent: '12'
+      }, {
+          iconLayout: 'default#imageWithContent',
+          iconImageHref: '../img/svg/map-marker.svg',
+          iconImageSize: [50, 80],
+          iconImageOffset: [-24, -24],
+          iconContentOffset: [15, 15],
+          iconContentLayout: MyIconContentLayout
+        }),
+      myPlacemark4 = new ymaps.Placemark([59.972725, 30.310761], {
+        hintContent: 'Филиал №3',
+        balloonContent: 'Акция!!! После 18:00 скидка 15%',
+        iconContent: '12'
+      }, {
+          iconLayout: 'default#imageWithContent',
+          iconImageHref: '../img/svg/map-marker.svg',
+          iconImageSize: [50, 80],
+          iconImageOffset: [-24, -24],
+          iconContentOffset: [15, 15],
+          iconContentLayout: MyIconContentLayout
+        })
+      ;
+    myMap.behaviors.disable('scrollZoom');
     myMap.geoObjects
       .add(myPlacemark1)
       .add(myPlacemark2)
@@ -296,130 +303,6 @@ window.onload = function () {
       .add(myPlacemark4)
 
   });
-  /// onepagescrill
-  // $(document).ready(function () {
-    
-    
-  // });
-
-
-  let screen = $('.wrapper');
-  const pointsWrapper = $('.right-nav');
-  for (let i = 0; i < screen.length; i++) {
-    const pointDot = $('<li>', {
-      class: 'right-nav__item'
-    });
-    const pointLink = $('<a>', {
-      class: 'right-nav__link',
-      href: '#',
-      'data-index': i
-    })
-    if (screen.eq(i).hasClass('section--active')) {
-      pointDot.addClass('nav__link--active');
-    }
-    pointsWrapper.append(pointDot);
-    pointDot.append(pointLink);
-  }
-
-  let inScroll = false;
-  function ops(container, index) {
-    if (inScroll) return;
-    inScroll = true;
-
-    const sections = container.children('.section');
-    console.log(sections);
-    const points = pointsWrapper.children('.right-nav__item');
-    const sectionActive = container.find('.section--active');
-    const pointActive = pointsWrapper.find('.right-nav--active');
-
-    container.css('transform', 'translateY(' + -index * 100 + '%)');
-    sectionActive.removeClass('section--active');
-    pointActive.removeClass('right-nav--active');
-
-    sections.eq(index).addClass('section--active');
-    points.eq(index).addClass('right-nav--active');
-    points.eq(index).css('transition-delay', '.2s');
-
-   let transitionDuration = parseFloat(container.css('transition-duration'));
-    setTimeout(() => {
-      inScroll = false;
-    }, transitionDuration * 1000 + 100);
-
-    points.eq(index).css('transition-delay', '0s');
-  }
-
-
-  $('.wrapper').on('wheel', function (event) {
-   let $this = $(this);
-    const deltaY = event.originalEvent.deltaY;
-    const sectionActive = $this.find('.section--active');
-    let sectionIndex = deltaY > 0 ? sectionActive.next().index() : sectionActive.prev().index();
-    if (sectionActive.next().length && deltaY > 0) {
-      ops($this, sectionIndex);
-    } else if (sectionActive.prev().length && deltaY < 0) {
-      ops($this, sectionIndex);
-    }
-  });
-
-  if (window.innerWidth <= 480  || window.innerWidth <= 768) {
-    $('.wrapper').swipe({
-      swipeUp: function () {
-       let $this = $(this);
-
-        sectionActive = $('.wrapper').find('.section--active');
-        sectionIndex = sectionActive.next().index();
-        if (sectionActive.next().length) {
-          ops($this, sectionIndex);
-        }
-      },
-      swipeDown: function () {
-        $this = $(this);
-
-        sectionActive = $('.wrapper').find('.section--active');
-        sectionIndex = sectionActive.prev().index();
-        if (sectionActive.prev().length) {
-          ops($this, sectionIndex);
-        }
-      }
-    });
-  }
-
-  const findByIndex = (index) => {
-    mainContent = $('.wrapper');
-    dataIndex = parseInt(index.attr('data-index'));
-    ops(mainContent, dataIndex);
-  }
-
-  $('.nav__link').on('click', function (event) {
-    event.preventDefault();
-    findByIndex($(this));
-  });
-
-  $('.overlay__link').on('click', function (event) {
-    $this = $(this);
-    overlayShow = $this.closest('.overlay__show');
-    overlayShow.removeClass('overlay__show');
-  });
-
-  $('.points__link').on('click', function (event) {
-    event.preventDefault();
-    findByIndex($(this));
-  });
-
-  $('#to-order').on('click', function (event) {
-    event.preventDefault();
-    findByIndex($(this));
-  });
-
-  $('.welcome-link').on('click', function (event) {
-    event.preventDefault();
-    findByIndex($(this));
-  });
-
-  ////////////////////////////////////////////
-
-
-  //конец функции
 }
 
 
