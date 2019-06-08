@@ -23,6 +23,14 @@
     flex-direction: column;
     align-items: center;
   }
+  
+  input:focus,
+  textarea:focus,
+  button:focus {
+    outline: 0;
+    box-shadow: 0 0 0 4px $colorOrange;
+  }
+
 }
 .delivery__modal {
   position: absolute;

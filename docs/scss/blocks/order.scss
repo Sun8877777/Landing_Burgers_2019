@@ -56,6 +56,7 @@
       @include adaptive(tablet) {
         margin-right: rem(23);
       }
+
       @include adaptive(smart) {
         margin-right: rem(10);
       }
@@ -72,10 +73,12 @@
       @include adaptive(tablet) {
         width: calc(100% /4 - 1.28rem);
       }
+
       @include adaptive(smart) {
         width: calc(100% /3 - 0.4rem);
       }
     }
+
     .order__contact-label--floor {
       @include adaptive(smart) {
         display: none;
@@ -92,6 +95,7 @@
     @include adaptive(tablet) {
       margin-top: 1.35rem;
     }
+
     @include adaptive(smart) {
       margin-bottom: 1.3rem;
     }
@@ -109,6 +113,7 @@
 
   .order__cash {
     padding-bottom: 2rem;
+
     @include adaptive(smart) {
       display: flex;
       align-items: center;
@@ -145,7 +150,7 @@
         left: rem(3);
         width: rem(8);
         height: rem(8);
-        background-color: #f9b43b;
+        background-color: $colorOrange;
         border-radius: 50%;
         z-index: 1;
       }
@@ -154,6 +159,7 @@
 
   .order__callback-wrap {
     padding-bottom: rem(18);
+
     @include adaptive(smart) {
       margin: 0px auto;
       width: 40%;
@@ -197,6 +203,7 @@
     @include adaptive(tablet) {
       margin-top: rem(20);
     }
+
     @include adaptive(smart) {
       display: flex;
       justify-content: center;

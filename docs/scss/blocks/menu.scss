@@ -27,7 +27,6 @@
   position: absolute;
   right: 0;
   top: 0;
-  // max-width: 71%;
   height: 100%;
   display: flex;
 
@@ -41,15 +40,17 @@
 .menu__item {
   height: 100%;
   display: inherit;
-  width: 80px;
+  // width: rem(80);
+  width: 7.2vw;
+  @include adaptive(tablet) {
+    width: 10.5vw;
+  }
   @include adaptive(smart) {
-    // width: 16.6%;
+    width: rem(50);
   }
 }
 
 .menu__title {
-  height: 100%;
-  width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 75%;
@@ -60,14 +61,15 @@
   color: $colorWhite;
   writing-mode: vertical-lr;
   transform: rotate(180deg);
-  padding: 50% 25%;
+  padding: 2rem 2.4vw;
+  line-height: 1.2;
 
   @include adaptive(tablet) {
     padding: rem(38) rem(18);
   }
 
   @include adaptive(smart) {
-    padding: 50% 17%;
+    padding: 0.5rem;
     font-size: rem(40);
   }
   & .menu__title-text {
@@ -112,10 +114,15 @@
   .menu__title {
     color: $colorOrange;
     height: 100%;    
-    width: 85px;
-    padding: 40px 20px;
+    width: 7.2vw;
+    padding: rem(40) rem(20);
 
+    @include adaptive(tablet) {
+      width: 10.5vw;
+    }
     @include adaptive(smart) {
+      padding: 0.5rem;
+      width: rem(50);
     }
   }
 
@@ -135,19 +142,10 @@
       width: 525px;
       padding: 9.2% 2% 8% 5.5%
     }
-
-    @include adaptive(smart) {
-      // position: absolute;
-      // left: 25%;
-      // top: 0;
-      // height: 100%;
-      // z-index: 5;
-      // padding: 11% 7% 7% 8.5%;
-    }
   }
 }
 
-.open .menu__desc-close {
+.menu__item.open .menu__desc-close {
   @include adaptive(smart) {
     display: block;
     font-size: 3rem;
@@ -161,59 +159,8 @@
     width: 30px;
     color: $colorWhite;
     cursor: pointer;
-/*
-    &::before {
-      content: "";
-      position: absolute;
-      top: rem(14);
-      left: rem(4);
-      width: rem(24);
-      border-radius: rem(5);
-      height: rem(4);
-      background-color: $colorWhite;
-      transform: rotate(45deg);
-    }
-
-    &::after {
-      content: "";
-      position: absolute;
-      top: rem(14);
-      left: rem(4);
-      width: rem(24);
-      border-radius: rem(5);
-      height: rem(4);
-      background-color: $colorWhite;
-      transform: rotate(-45deg);
-    }
-    */
+    background: transparent;
   }
 
-}
-.menu__item:nth-child(2) {
-  .menu__desc {
-    @include adaptive(smart) {
-      // left: 33%;
-    }
-  }
-
-  .menu__desc-close {
-    @include adaptive(smart) {
-      // left: 105.3%;
-    }
-  }
-}
-
-.menu__item:nth-child(3) {
-  .menu__desc {
-    @include adaptive(smart) {
-      // left: 49.8%;
-    }
-  }
-
-  .menu__desc-close {
-    @include adaptive(smart) {
-      // left: 122%;
-    }
-  }
 
 }

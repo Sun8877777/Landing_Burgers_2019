@@ -128,7 +128,7 @@
 }
 
 .employee.open {
-
+  flex-direction: column;
   .employee__name {
     color: $colorOrange;
     @include adaptive(smart) {      
