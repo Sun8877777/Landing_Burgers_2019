@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: 'Gagalin';
   src: url("../font/gagalin.woff2") format("woff2"), url("../font/gagalin-regular-webfont.woff") format("woff");
@@ -507,6 +508,142 @@ table {
   display: block;
   text-align: center;
   border-radius: 5px; }
+
+input[type=range] {
+  -webkit-appearance: none;
+  /* Скрывает слайдер, чтобы можно было создать свой */
+  width: 100%;
+  /* Указание параметра ширины требуется для Firefox. */ }
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none; }
+
+input[type=range]:focus {
+  outline: none;
+  /* Убирает голубую границу у элемента. Хотя, возможно, и стоит создавать некоторое оформления для состояния фокуса в целях обеспечения доступности. */ }
+
+input[type=range]::-ms-track {
+  width: 100%;
+  cursor: pointer;
+  background: transparent;
+  /* Скрывает слайдер, чтобы можно было добавить собственные стили. */
+  border-color: transparent;
+  color: transparent; }
+
+/* Специальные правила для браузеров на движках WebKit/Blink */
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 1px solid #000000;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  background: #3e3e3e;
+  cursor: pointer;
+  margin-top: -0.21429rem;
+  /* Вам нужно указать значение для поля в Chrome, но в Firefox и IE это происходит автоматически */
+  -webkit-box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+          box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  /* Добавляем классные эффекты для слайдера! */ }
+
+/* Тоже самое для Firefox */
+input[type=range]::-moz-range-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  background: #3e3e3e;
+  cursor: pointer; }
+
+/* Тоже самое для IE */
+input[type=range]::-ms-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  background: #3e3e3e;
+  cursor: pointer; }
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  background: #626262;
+  border-radius: 1.3px; }
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #626262; }
+
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  background: #626262;
+  border-radius: 1.3px; }
+
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  border-width: 16px 0;
+  color: transparent; }
+
+input[type=range]::-ms-fill-lower {
+  background: #2a6495;
+  border-radius: 2.6px; }
+
+input[type=range]:focus::-ms-fill-lower {
+  background: #626262; }
+
+input[type=range]::-ms-fill-upper {
+  background: #626262;
+  border-radius: 2.6px; }
+
+input[type=range]:focus::-ms-fill-upper {
+  background: #626262; }
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  background: #626262;
+  border-radius: 1.3px; }
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #626262; }
+
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  background: #626262;
+  border-radius: 1.3px; }
+
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  border-width: 16px 0;
+  color: transparent; }
+
+input[type=range]::-ms-fill-lower {
+  background: #2a6495;
+  border-radius: 2.6px; }
+
+input[type=range]:focus::-ms-fill-lower {
+  background: #626262; }
+
+input[type=range]::-ms-fill-upper {
+  background: #626262;
+  border-radius: 2.6px; }
+
+input[type=range]:focus::-ms-fill-upper {
+  background: #626262; }
 
 .section-title {
   font-family: 'Gagalin', Helvetica, sans-serif;
@@ -2042,7 +2179,7 @@ table {
               transform: rotate(-45deg); }
 
 .video {
-  background: url("../img/features-bg.jpg") center center/cover no-repeat;
+  background: url("../img/video-player-bg.jpg") center center/cover no-repeat;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2059,53 +2196,116 @@ table {
     .video .container .section-title {
       font-size: 4.2rem;
       padding-bottom: 3rem; }
+      @media only screen and (max-width: 768px) {
+        .video .container .section-title {
+          font-size: 5rem;
+          margin-left: 8px;
+          margin-top: 11.5rem;
+          margin-bottom: 8px; } }
+      @media only screen and (max-width: 480px) {
+        .video .container .section-title {
+          font-size: 3.57143rem;
+          text-align: center;
+          padding: 0 10%;
+          margin-top: 0px;
+          letter-spacing: 0;
+          line-height: 1.2; } }
+
+.video__wrapper {
+  background-size: cover;
+  position: relative;
+  padding-bottom: 2rem; }
+  @media only screen and (max-width: 480px) {
+    .video__wrapper {
+      margin-bottom: 51%;
+      margin-top: 9%; } }
+
+.video__player {
+  width: 47.14286rem;
+  height: 26.5rem; }
+  @media only screen and (max-width: 768px) {
+    .video__player {
+      width: 94vw;
+      height: 47vh; } }
+  @media only screen and (max-width: 480px) {
+    .video__player {
+      width: 95vw;
+      height: 32vh; } }
+
+.video__splash {
+  position: absolute;
+  background: transparent url("../img/btn-play-video.png") center center no-repeat;
+  z-index: 4;
+  width: 10rem;
+  height: 10rem;
+  top: 50%;
+  left: 50%;
+  margin-top: -5rem;
+  margin-left: -5rem;
+  cursor: pointer; }
+  @media only screen and (max-width: 768px) {
+    .video__splash {
+      background: transparent url("../img/btn-play-video-tablet.png") center center no-repeat;
+      width: 13rem;
+      height: 13rem;
+      margin-top: -8.2rem;
+      margin-left: -3.2rem; } }
 
 .player {
-  position: relative;
-  display: inline-block; }
+  position: absolute;
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  background-color: #3e3e3e;
+  height: 2.42857rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
   .player.hidden {
     opacity: 0;
     -webkit-transition: opacity .3s;
     -o-transition: opacity .3s;
     transition: opacity .3s; }
-
-.player__splash {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url("../docs/img/btn-play-video.png") center center/cover no-repeat;
-  cursor: pointer; }
-
-.player__wrapper.active .player__splash {
-  display: none; }
-
-.player__controls {
-  position: absolute;
-  bottom: -2rem;
-  left: 0;
-  right: 0;
-  height: 35px;
-  background: #3e3e3e; }
+  @media only screen and (max-width: 768px) {
+    .player {
+      height: 3.07143rem; } }
+  @media only screen and (max-width: 480px) {
+    .player {
+      height: 2.28571rem; } }
 
 .player__start {
+  font-size: 0;
   width: 0;
   height: 0;
-  border: 11px solid transparent;
+  border: 1.14286rem solid transparent;
   border-left-color: #626262;
   padding: 0;
   border-right-width: 0;
   background: transparent;
-  position: absolute;
-  top: 5px;
-  left: 20px;
-  outline: none; }
+  margin: 2px 2px 2px 1.35714rem;
+  outline: none;
+  margin-right: 1.5rem;
+  cursor: pointer; }
+  @media only screen and (max-width: 768px) {
+    .player__start {
+      margin: 2px 2px 2px 2.85714rem;
+      outline: none;
+      margin-right: 2rem; } }
+  @media only screen and (max-width: 480px) {
+    .player__start {
+      margin: 0 2px 0 1.71429rem;
+      margin-right: 0.14286rem;
+      border-width: 0.85714rem; } }
   .player__start.paused {
-    width: 14px;
-    height: 22px;
-    border: none; }
+    width: 1.07143rem;
+    height: 1.57143rem;
+    border: none;
+    position: relative; }
+    @media only screen and (max-width: 480px) {
+      .player__start.paused {
+        margin-right: 0.85714rem; } }
     .player__start.paused:after, .player__start.paused:before {
       content: "";
       display: block;
@@ -2119,34 +2319,86 @@ table {
     .player__start.paused:before {
       left: 0; }
 
-.player__playback {
-  position: absolute;
-  height: 4px;
-  width: 446px;
-  background: #626262;
-  top: 15px;
-  left: 50px; }
+.player__wrap-progress {
+  position: relative; }
 
-.player__playback-button {
-  background: #626262;
-  border-radius: 50px;
-  border: none;
-  width: 12px;
-  height: 12px;
-  padding: 0;
-  position: absolute;
-  top: -4px;
-  -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%);
-  left: 0; }
+.player__progress {
+  width: 31.5rem;
+  background-color: #626262;
+  height: 0.57143rem;
+  cursor: pointer; }
+  @media only screen and (max-width: 768px) {
+    .player__progress {
+      width: 43rem; } }
+  @media only screen and (max-width: 480px) {
+    .player__progress {
+      width: 74vw; } }
 
-.player__duration {
+.player__progress-marker {
   position: absolute;
-  top: 7px;
-  right: 20px;
-  color: #626262;
-  font-weight: bold; }
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: #3e3e3e;
+  border: 1px solid #000000;
+  display: block;
+  top: 0;
+  left: 0%;
+  margin-left: -0.5rem;
+  cursor: pointer; }
+  @media only screen and (max-width: 768px) {
+    .player__progress-marker {
+      display: none; } }
+
+.player__mute-on {
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  background: url(../img/volume-min-btn.png) no-repeat;
+  margin-left: 3.3rem;
+  margin-top: 0.35714rem; }
+  @media only screen and (max-width: 768px) {
+    .player__mute-on {
+      display: none; } }
+  .player__mute-on.player__mute-off {
+    width: 2rem;
+    height: 2rem;
+    border: none;
+    position: relative; }
+    .player__mute-on.player__mute-off:before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 5px;
+      top: -5px;
+      left: 7px;
+      bottom: 0;
+      background: red;
+      -webkit-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+              transform: rotate(45deg); }
+    .player__mute-on.player__mute-off:after {
+      content: "";
+      display: block;
+      position: absolute;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      top: -1px;
+      left: -3px;
+      bottom: 0;
+      background: transparent;
+      border: 2px solid red; }
+
+.player .player__volume {
+  width: 4.2rem;
+  margin-left: auto;
+  margin-right: 1.4rem;
+  background-color: #626262;
+  height: 8px; }
+  @media only screen and (max-width: 768px) {
+    .player .player__volume {
+      display: none; } }
 
 .delivery {
   background: #000000 url("../img/delivery-bg.jpg") no-repeat center center;

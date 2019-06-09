@@ -6,13 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Бургеры</title>
-  <link rel="stylesheet" href="./css/style.min.css">
+  <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
   <div class="wrapper">
     <div class="maincontent">
       <section class="section hero active">
+        <h1 class="visually-hidden">Самые лучшие бургеры!</h1>
         <div class="container">
           <header class="header">
             <a class="logo">
@@ -29,7 +30,8 @@
                   <li class="main-nav__item"><a href="#" data-scroll-to="3" class="main-nav__link">Команда</a></li>
                   <li class="main-nav__item"><a href="#" data-scroll-to="4" class="main-nav__link">Меню</a></li>
                   <li class="main-nav__item"><a href="#" data-scroll-to="5" class="main-nav__link">Отзывы</a></li>
-                  <li class="main-nav__item"><a href="#" data-scroll-to="6" class="main-nav__link">Как мы работаем</a></li>
+                  <li class="main-nav__item"><a href="#" data-scroll-to="6" class="main-nav__link">Как мы работаем</a>
+                  </li>
                   <li class="main-nav__item"><a href="#" data-scroll-to="7" class="main-nav__link">Контакты</a></li>
                 </ul>
               </div>
@@ -44,15 +46,14 @@
               <h2 class="section-title section-title--orange">Мы делаем</h2>
               <div class="promo__text">Натуральные бургеры</div>
             </div>
-            <a href="" class="arrow"  data-scroll-to="1">
+            <a href="" class="arrow" data-scroll-to="1">
               <svg class="arrow__down">
                 <use xlink:href="./img/sprite.svg#arrow-scroll"></use>
               </svg>
             </a>
-            <h1 class="visually-hidden">Самые лучшие бургеры!</h1>
           </section>
         </div>
-      </section>      
+      </section>
       <section class="section features">
         <div class="container container--center">
           <h2 class="section-title section-title--black">Мы лучшие</h2>
@@ -580,31 +581,32 @@
         </div>
       </section>
       <section class="section video">
-          <div class="container">
-            <h2 class="section-title section-title--black">Как мы работаем</h2>
-            <div class="player hidden">
-              <div class="player__wrapper">
-                <div id="yt-player"></div>
-                <div class="player__splash"></div>
+        <div class="container">
+          <h2 class="section-title section-title--black">Как мы работаем</h2>
+          <div class="video__wrapper" style="background-color:black">
+
+            <video class="video__player" autobuffer poster="/img/btn-play-video-bg.jpg">
+              <source src="./video/burgers.mp4" type="video/mp4">
+            </video>
+            <div  class="player">
+              <a href="#" class="player__start"></a> 
+              <div class="player__wrap-progress"> <progress id='progress-bar' min='0' max='100' value='0'
+                  class="player__progress">0% played</progress>
+                  <span class="player__progress-marker"></span>
               </div>
-              <div class="player__controls">
-                <button class="player__start"></button>
-                <div class="player__playback">
-                  <button class="player__playback-button"></button>
-                </div>
-                <div class="player__duration">
-                  <span class="player__duration-completed">0:00</span> :
-                  <span class="player__duration-estimate">0:00</span>
-                </div>
-              </div>
+
+              <a href="#" class="player__mute-on"></a>
+              <input type="range" step="0.1" min="0" max="1" value="1" id="volume" class="player__volume" />
             </div>
+            <div class="video__splash"></div>
           </div>
-        </section>
-  
+        </div>
+      </section>
+
       <section class="section delivery">
         <div class="container container--center">
           <h2 class="section-title section-title--orange">Закажите доставку</h2>
-          <form action="" class="delivery__form order">
+          <form class="delivery__form order">
             <div class="order__adress">
               <div class="order__contact">
                 <label for="ord_contact_name" class="order__contact-label">Имя
@@ -617,7 +619,7 @@
                 </label>
               </div>
               <div class="order__street-wrap">
-                <label for="ord_street" class="order__contact-label">Улица
+                <label for="street" class="order__contact-label">Улица
                   <input type="text" name="ord_street" id="street" required>
                 </label>
               </div>
@@ -667,7 +669,7 @@
         <div class="footer__wrap">
           <div class="container container--row">
             <div class="contact">
-              <adress class="contact__adress">Санкт-Петербург, ул.Бабушкина, д.12/1, 15</adress>
+              <div class="contact__adress">Санкт-Петербург, ул.Бабушкина, д.12/1, 15</div>
               <a href="" class="contact__phone">+7 (812) 377-13-77</a>
             </div>
             <div class="social">
@@ -725,15 +727,14 @@
       <a class="fixed-menu__link" href="" data-scroll-to="7"></a>
     </li>
   </ul>
-  
+
   <script src="./js/libs.min.js"></script>
 
   <script src="https://www.youtube.com/iframe_api" defer></script>
-  <script src="https://api-maps.yandex.ru/2.1/?apikey=0a151eeb-4f01-4b07-b453-69062749e980&lang=ru_RU"
-    type="text/javascript"></script>    
-      
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=0a151eeb-4f01-4b07-b453-69062749e980&lang=ru_RU"></script>
+
   <script src="./js/op.js" defer></script>
-  <script src="./js/player.js" defer></script>
+  <!-- <script src="./js/player.js" defer></script> -->
   <script src="./js/run.js" defer></script>
 </body>
 

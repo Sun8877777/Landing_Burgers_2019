@@ -120,22 +120,6 @@ gulp.task('prebuild', async function () {
 
 });
 
-
-
-//автодобавление scss пока  в тесте
-
-// gulp.task('css', function() {
-//     return gulp
-//             .src('!docs/scss/style.scss','docs/scss/**/*.scss')
-//             .pipe(bulkSass())
-//             .pipe(
-//                 sass({
-//                     includePaths: ['!docs/scss/style.scss','docs/scss/**/*.scss']
-//                 }))
-//             .pipe( gulp.dest('docs') );
-// });
-
-
 gulp.task('watch', function () {
 	gulp.watch('docs/scss/**/*.scss', gulp.parallel('sass'));
 	gulp.watch('docs/*.html', gulp.parallel('code'));
