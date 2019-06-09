@@ -9,7 +9,7 @@ window.onload = function () {
   const sliderComposition = document.querySelectorAll('.composition');
   const compositionClose = document.querySelectorAll('.composition__close');
   const reviewsBtn = document.querySelectorAll('.reviews__item-btn');
-  // const reviewsModalClose = document.querySelector('.reviews__modal-close');
+  const videoPlayer = document.querySelector('.video');
   const ESC_KEYCODE = 27;
   const ENTER_KEYCODE = 13;
 
@@ -37,7 +37,7 @@ window.onload = function () {
   });
   // Открыть/закрыть меню
   function openMenuItem(e) {
-    
+
     e.target.parentElement.classList.toggle('open');
     const itemId = localStorage.getItem('itemId');
     localStorage.setItem('itemId', e.target.parentElement.id);
@@ -50,22 +50,22 @@ window.onload = function () {
 
     if (window.innerWidth <= 480 && e.target.parentElement.classList.contains('open')) {
       let widthElem = e.target.width;
-      console.log(e.target.width)      
+      console.log(e.target.width)
       if (!e.target.parentElement.previousElementSibling) {
-          
-          menuList.style.transform = 'translateX(100px)'
+
+        menuList.style.transform = 'translateX(100px)'
       } else if (!e.target.parentElement.nextElementSibling) {
-          
-          menuList.style.transform = 'translateX(0)'
+
+        menuList.style.transform = 'translateX(0)'
       } else {
-          menuList.style.transform = 'translateX(50px)'
+        menuList.style.transform = 'translateX(50px)'
       }
       e.target.nextElementSibling.style.width = `${window.innerWidth - 50}px`;
-  } else {
+    } else {
       menuList.style.transform = 'translateX(0)'
-  }
+    }
   };
-/// Закрыть меню
+  /// Закрыть меню
   function closeMenuItem(e) {
     e.preventDefault();
     if (window.innerWidth <= 480 && e.target.parentElement.classList.contains('open')) {
@@ -74,7 +74,7 @@ window.onload = function () {
     }
   };
   menuList.addEventListener('click', openMenuItem); // добавляем открытие меню по клику
-  
+
   for (let i = 0; i < menuClose.length; i++) {
     menuClose[i].addEventListener('click', closeMenuItem)
   } /// добавляем закрытие меню по клиек на крестик в мобильной версии
@@ -233,9 +233,9 @@ window.onload = function () {
       modalClose.setAttribute('type', 'button');
 
       //наполняем текстовым содержимым
-       modalTitle.textContent=e.currentTarget.previousElementSibling.previousElementSibling.textContent;
-       modalParagraph.textContent=e.currentTarget.previousElementSibling.textContent;
-       modalClose.addEventListener('click',changeClose);
+      modalTitle.textContent = e.currentTarget.previousElementSibling.previousElementSibling.textContent;
+      modalParagraph.textContent = e.currentTarget.previousElementSibling.textContent;
+      modalClose.addEventListener('click', changeClose);
       // console.log(modalParagraph);
       // добавляем элементы в div
       modalDiv.appendChild(modalTitle);
@@ -246,7 +246,7 @@ window.onload = function () {
       document.body.classList.add('overlay');
     })
   });
-  function changeClose(){
+  function changeClose() {
     let div = document.querySelector('.reviews__modal')
     document.body.removeChild(div);
     document.body.classList.remove('overlay');
@@ -321,6 +321,103 @@ window.onload = function () {
       .add(myPlacemark4)
 
   });
+  //////// видеоплеер
+  function videoPlayerApi(e) {
+    let videoEl = videoPlayer.querySelector('.video__player');
+    let vidControls = videoPlayer.querySelector('.player');
+    let playBtn = videoPlayer.querySelector('.player__start');
+    let splash = videoPlayer.querySelector('.video__splash');
+    let volumeControl = videoPlayer.querySelector('.player__volume');
+    let volumeMute = videoPlayer.querySelector('.player__mute-on');
+    let progressBar = videoPlayer.querySelector('.player__progress');
+    let progressMarker = videoPlayer.querySelector('.player__progress-marker');
+    let posterImage ='/img/btn-play-video-bg.jpg';
+    videoEl.poster = posterImage;
+    // videoEl.addEventListener('canplaythrough', function () {
+    //   vidControls.classList.remove('hidden');
+    //   videoEl.volume = volumeControl.value;
+    // });
+   
+    videoEl.addEventListener("ended", function (){
+      this.src=this.src;
+      splash.style.display='block';
+      playBtn.classList.remove('paused');
+      videoEl.pause();
+  });
+    splash.addEventListener('click', function (e) {
+      if (videoEl.paused) {  // если видео остановлено, запускаем
+        playBtn.classList.add('paused');
+
+        splash.style.display='none';
+        videoEl.play();
+      } else {
+        playBtn.classList.remove('paused');
+        videoEl.pause();
+      }
+    }, false);
+    console.log(videoEl.poster);
+    playBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      if (videoEl.paused) {  // если видео остановлено, запускаем
+        playBtn.classList.add('paused');
+        splash.style.display='none';
+        videoEl.play();
+      } else {
+        playBtn.classList.remove('paused');
+        videoEl.pause();
+      }
+    }, false);
+
+    videoEl.addEventListener('play', function () {
+
+      playBtn.innerText = "Pause";
+    }, false);
+
+    videoEl.addEventListener('pause', function () {
+
+      playBtn.innerText = "Play";
+    }, false);
+
+    volumeControl.addEventListener('input', function () {
+
+      videoEl.volume = volumeControl.value;
+    }, false);
+    videoEl.addEventListener('ended', function () {
+
+      videoEl.currentTime = 0;
+    }, false);
+
+
+    volumeMute.addEventListener('click', function (e) {
+      e.preventDefault();
+      if (videoEl.muted == false) {
+        volumeMute.classList.add('player__mute-off');
+        videoEl.muted = true;
+      } else {
+        volumeMute.classList.remove('player__mute-off');
+        videoEl.muted = false;
+      }
+    })
+    function seek(e) {
+      var percent = e.offsetX / this.offsetWidth;
+      videoEl.currentTime = percent * videoEl.duration;
+      e.target.value = Math.floor(percent / 100);
+      e.target.innerHTML = progressBar.value + '% played';
+    }
+    progressBar.addEventListener("click", seek);
+
+
+    function updateProgressBar() {
+      var percentage = Math.floor((100 / videoEl.duration) * videoEl.currentTime);
+      progressBar.value = percentage;
+      progressBar.innerHTML = percentage + '% played';
+      progressMarker.style.left = `${percentage}%`;
+    }
+    videoEl.addEventListener('timeupdate', updateProgressBar, false);
+
+  }
+
+  videoPlayerApi();
 }
 
 

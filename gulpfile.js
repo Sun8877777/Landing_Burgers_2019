@@ -27,7 +27,7 @@ gulp.task('sass', function () {
 gulp.task('browser-sync', function () {
 	browserSync({
 		server: {
-			baseDir: 'docs'
+			baseDir: 'prod'
 		},
 		notify: false
 	});
@@ -117,6 +117,8 @@ gulp.task('prebuild', async function () {
 
 	var buildHtml = gulp.src('docs/*.html')
 		.pipe(gulp.dest('prod'));
+	var buildVideo = gulp.src('docs/video/*.*')
+		.pipe(gulp.dest('prod/video'));
 
 });
 
