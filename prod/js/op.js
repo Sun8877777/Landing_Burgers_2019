@@ -93,12 +93,15 @@ $("[data-scroll-to]").on("click", e => {
 
   performTransition(target);
 });
-
+console.log(isMobile);
 if (isMobile) {
-  $(window).swipe({
+
+  $(window).swipe({    
     swipe: function(event, direction) {
       const nextOrPrev = direction === "up" ? "next" : "prev";
+      console.log('mobile ' + direction);
       scrollToSection(nextOrPrev);
     }
   });
+  
 }
