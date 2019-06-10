@@ -60,7 +60,8 @@ const scrollToSection = direction => {
     performTransition(prevSection.index());
   }
 };
-let mult;
+
+let mult = true;
 if (mult) {
   mult = false;
   $(".wrapper").on("wheel", e => {
@@ -78,7 +79,8 @@ if (mult) {
     e.preventDefault();
   });
 }
-setTimeout(() => { mult = true }, 1300)
+
+
 $(document).on("keydown", e => {
   switch (e.keyCode) {
     case 38:
@@ -97,6 +99,7 @@ $("[data-scroll-to]").on("click", e => {
   performTransition(target);
 });
 // console.log(isMobile);
+
 if (isMobile) {
 
   $(window).swipe({
@@ -111,5 +114,5 @@ if (isMobile) {
 
 
 
-
+setTimeout(() => { mult = true }, 1300)
 
