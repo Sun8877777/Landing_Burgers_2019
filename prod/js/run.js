@@ -271,7 +271,7 @@ window.onload = function () {
         balloonContent: 'Красивая метка'
       }, {
           iconLayout: 'default#image',
-          iconImageHref: '../img/svg/map-marker.svg',
+          iconImageHref: '../img/map-marker.svg',
           iconImageSize: [50, 80],
           iconImageOffset: [-5, -38]
         }),
@@ -282,7 +282,7 @@ window.onload = function () {
         iconContent: '12'
       }, {
           iconLayout: 'default#imageWithContent',
-          iconImageHref: '../img/svg/map-marker.svg',
+          iconImageHref: '../img/map-marker.svg',
           iconImageSize: [50, 80],
           iconImageOffset: [-24, -24],
           iconContentOffset: [15, 15],
@@ -294,7 +294,7 @@ window.onload = function () {
         iconContent: '12'
       }, {
           iconLayout: 'default#imageWithContent',
-          iconImageHref: '../img/svg/map-marker.svg',
+          iconImageHref: '../img/map-marker.svg',
           iconImageSize: [50, 80],
           iconImageOffset: [-24, -24],
           iconContentOffset: [15, 15],
@@ -306,7 +306,7 @@ window.onload = function () {
         iconContent: '12'
       }, {
           iconLayout: 'default#imageWithContent',
-          iconImageHref: '../img/svg/map-marker.svg',
+          iconImageHref: '../img/map-marker.svg',
           iconImageSize: [50, 80],
           iconImageOffset: [-24, -24],
           iconContentOffset: [15, 15],
@@ -355,7 +355,6 @@ window.onload = function () {
         videoEl.pause();
       }
     }, false);
-    console.log(videoEl.poster);
     playBtn.addEventListener('click', function (e) {
       e.preventDefault();
       if (videoEl.paused) {  // если видео остановлено, запускаем
