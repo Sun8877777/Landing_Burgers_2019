@@ -324,7 +324,7 @@ window.onload = function () {
   //////// видеоплеер
   function videoPlayerApi(e) {
     let videoEl = videoPlayer.querySelector('.video__player');
-    let vidControls = videoPlayer.querySelector('.player');
+    // let vidControls = videoPlayer.querySelector('.player');
     let playBtn = videoPlayer.querySelector('.player__start');
     let splash = videoPlayer.querySelector('.video__splash');
     let volumeControl = videoPlayer.querySelector('.player__volume');
@@ -332,18 +332,13 @@ window.onload = function () {
     let progressBar = videoPlayer.querySelector('.player__progress');
     let progressMarker = videoPlayer.querySelector('.player__progress-marker');
     let posterImage ='./img/btn-play-video-bg.jpg';
-    videoEl.poster = posterImage;
+    videoEl.poster = posterImage;    
     // videoEl.addEventListener('canplaythrough', function () {
-    //   vidControls.classList.remove('hidden');
+      
     //   videoEl.volume = volumeControl.value;
     // });
    
-    videoEl.addEventListener("ended", function (){
-      this.src=this.src;
-      splash.style.display='block';
-      playBtn.classList.remove('paused');
-      videoEl.pause();
-  });
+    
     splash.addEventListener('click', function (e) {
       if (videoEl.paused) {  // если видео остановлено, запускаем
         playBtn.classList.add('paused');
@@ -378,14 +373,16 @@ window.onload = function () {
     }, false);
 
     volumeControl.addEventListener('input', function () {
-
       videoEl.volume = volumeControl.value;
     }, false);
-    videoEl.addEventListener('ended', function () {
 
+    videoEl.addEventListener("ended", function (){
+      this.src=this.src;
+      splash.style.display='block';
+      playBtn.classList.remove('paused');
+      videoEl.pause();
       videoEl.currentTime = 0;
-    }, false);
-
+  });
 
     volumeMute.addEventListener('click', function (e) {
       e.preventDefault();
@@ -403,15 +400,15 @@ window.onload = function () {
       e.target.value = Math.floor(percent / 100);
       e.target.innerHTML = progressBar.value + '% played';
     }
-    progressBar.addEventListener("click", seek);
-
-
+    
     function updateProgressBar() {
       var percentage = Math.floor((100 / videoEl.duration) * videoEl.currentTime);
       progressBar.value = percentage;
       progressBar.innerHTML = percentage + '% played';
       progressMarker.style.left = `${percentage}%`;
     }
+    
+    progressBar.addEventListener("click", seek);
     videoEl.addEventListener('timeupdate', updateProgressBar, false);
 
   }

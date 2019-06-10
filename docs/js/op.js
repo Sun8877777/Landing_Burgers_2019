@@ -19,15 +19,15 @@ const performTransition = sectionEq => {
   if (inscroll) return;
 
   const sectionEqNum = parseInt(sectionEq);
-try {
-  if (!!sectionEqNum === false)
-  // console.error("не верное значение для аргуемента sectionEq");
+  try {
+    if (!!sectionEqNum === false)
+      // console.error("не верное значение для аргуемента sectionEq");
 
-  inscroll = true;
-}catch (e) {
-  throw new Error('не верное значение для аргуемента sectionEq')
-}
-  
+      inscroll = true;
+  } catch (e) {
+    throw new Error('не верное значение для аргуемента sectionEq')
+  }
+
 
   const position = sectionEqNum * -100 + "%";
 
@@ -60,22 +60,25 @@ const scrollToSection = direction => {
     performTransition(prevSection.index());
   }
 };
+let mult;
+if (mult) {
+  mult = false;
+  $(".wrapper").on("wheel", e => {
+    const deltaY = e.originalEvent.deltaY;
 
-$(".wrapper").on("wheel", e => {
-  const deltaY = e.originalEvent.deltaY;
+    if (deltaY > 0) {
+      scrollToSection("next");
+    }
+    if (deltaY < 0) {
+      scrollToSection("prev");
+    }
+  });
 
-  if (deltaY > 0) {
-    scrollToSection("next");
-  }
-  if (deltaY < 0) {
-    scrollToSection("prev");
-  }
-});
-
-$('.wrapper').on('touchmove', e => {
-  e.preventDefault();
-});
-
+  $('.wrapper').on('touchmove', e => {
+    e.preventDefault();
+  });
+}
+setTimeout(() => { mult = true }, 1300)
 $(document).on("keydown", e => {
   switch (e.keyCode) {
     case 38:
@@ -93,15 +96,20 @@ $("[data-scroll-to]").on("click", e => {
 
   performTransition(target);
 });
-console.log(isMobile);
+// console.log(isMobile);
 if (isMobile) {
 
-  $(window).swipe({    
-    swipe: function(event, direction) {
+  $(window).swipe({
+    swipe: function (event, direction) {
       const nextOrPrev = direction === "up" ? "next" : "prev";
       console.log('mobile ' + direction);
       scrollToSection(nextOrPrev);
     }
   });
-  
+
 }
+
+
+
+
+
