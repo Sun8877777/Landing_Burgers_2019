@@ -268,21 +268,21 @@ window.onload = function () {
 
       myPlacemark1 = new ymaps.Placemark([59.899180, 30.314019], {
         hintContent: 'Центр',
-        balloonContent: 'Красивая метка'
+        // balloonContent: 'Красивая метка'
       }, {
           iconLayout: 'default#image',
-          iconImageHref: '../img/map-marker.svg',
+          iconImageHref: '/img/map-marker.svg',
           iconImageSize: [50, 80],
           iconImageOffset: [-5, -38]
         }),
 
       myPlacemark2 = new ymaps.Placemark([59.911887, 30.481269], {
         hintContent: 'Филиал №1',
-        balloonContent: 'Лучшие отзывы!!',
+        // balloonContent: 'Лучшие отзывы!!',
         iconContent: '12'
       }, {
           iconLayout: 'default#imageWithContent',
-          iconImageHref: '../img/map-marker.svg',
+          iconImageHref: '/img/map-marker.svg',
           iconImageSize: [50, 80],
           iconImageOffset: [-24, -24],
           iconContentOffset: [15, 15],
@@ -290,11 +290,11 @@ window.onload = function () {
         }),
       myPlacemark3 = new ymaps.Placemark([59.945826, 30.384169], {
         hintContent: 'Филиал №2',
-        balloonContent: 'Удобное местоположение',
+        // balloonContent: 'Удобное местоположение',
         iconContent: '12'
       }, {
           iconLayout: 'default#imageWithContent',
-          iconImageHref: '../img/map-marker.svg',
+          iconImageHref: '/img/map-marker.svg',
           iconImageSize: [50, 80],
           iconImageOffset: [-24, -24],
           iconContentOffset: [15, 15],
@@ -302,11 +302,11 @@ window.onload = function () {
         }),
       myPlacemark4 = new ymaps.Placemark([59.972725, 30.310761], {
         hintContent: 'Филиал №3',
-        balloonContent: 'Акция!!! После 18:00 скидка 15%',
+        // balloonContent: 'Акция!!! После 18:00 скидка 15%',
         iconContent: '12'
       }, {
           iconLayout: 'default#imageWithContent',
-          iconImageHref: '../img/map-marker.svg',
+          iconImageHref: '/img/map-marker.svg',
           iconImageSize: [50, 80],
           iconImageOffset: [-24, -24],
           iconContentOffset: [15, 15],
