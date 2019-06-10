@@ -294,7 +294,7 @@ window.onload = function () {
         iconContent: '12'
       }, {
           iconLayout: 'default#imageWithContent',
-          iconImageHref: '/img/map-marker.svg',
+          iconImageHref: './img/map-marker.svg',
           iconImageSize: [50, 80],
           iconImageOffset: [-24, -24],
           iconContentOffset: [15, 15],
@@ -306,7 +306,7 @@ window.onload = function () {
         iconContent: '12'
       }, {
           iconLayout: 'default#imageWithContent',
-          iconImageHref: '/img/map-marker.svg',
+          iconImageHref: './img/map-marker.svg',
           iconImageSize: [50, 80],
           iconImageOffset: [-24, -24],
           iconContentOffset: [15, 15],
@@ -331,7 +331,7 @@ window.onload = function () {
     let volumeMute = videoPlayer.querySelector('.player__mute-on');
     let progressBar = videoPlayer.querySelector('.player__progress');
     let progressMarker = videoPlayer.querySelector('.player__progress-marker');
-    let posterImage ='/img/btn-play-video-bg.jpg';
+    let posterImage ='./img/btn-play-video-bg.jpg';
     videoEl.poster = posterImage;
     // videoEl.addEventListener('canplaythrough', function () {
     //   vidControls.classList.remove('hidden');
