@@ -139,9 +139,11 @@
   padding: 1.9%;
   @include adaptive(tablet) {
     width: 65%;
+    margin-left: -32.5%;
   }
   @include adaptive(smart) {
     width: 95%;
+    margin-left: -47%;
   }
   .section-title {
     font-size: rem(14);

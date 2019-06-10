@@ -2129,10 +2129,12 @@ input[type=range]:focus::-ms-fill-upper {
   padding: 1.9%; }
   @media only screen and (max-width: 768px) {
     .reviews__modal {
-      width: 65%; } }
+      width: 65%;
+      margin-left: -32.5%; } }
   @media only screen and (max-width: 480px) {
     .reviews__modal {
-      width: 95%; } }
+      width: 95%;
+      margin-left: -47%; } }
   .reviews__modal .section-title {
     font-size: 1rem;
     text-align: left;
