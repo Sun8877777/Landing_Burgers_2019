@@ -21,7 +21,7 @@
 
 .main-nav__item {
   position: relative;
-
+  
   &:first-child {
     padding-left: 0;
     margin-left: 0;
@@ -48,9 +48,9 @@
   text-align: center;
   font-size: inherit;
   text-transform: uppercase;
-
+  transition: 400ms;
   &:hover {
-    cursor: pointer;
+    cursor: pointer;    
   }
 }
 
@@ -62,7 +62,7 @@
     font-size: 0;
     display: block;
     top: rem(34);
-    right: 2%;
+    right: 1%;
     height: rem(24);
     width: rem(25);
     border: none;

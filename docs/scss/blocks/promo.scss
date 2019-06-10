@@ -73,7 +73,7 @@
     padding-right: 8%;
     padding-left: 2%;
     @include adaptive(tablet) {
-      padding: 0% 4.3% 1.5% 2%;
+      padding: 0% 4.3% 1.5% 3%;
     }
     @include adaptive(smart) {
       font-size: rem(45)

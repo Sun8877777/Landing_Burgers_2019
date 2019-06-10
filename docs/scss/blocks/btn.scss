@@ -9,4 +9,10 @@
   display: inline-block;
   text-decoration: none;
   border: none;
+  transition: background-color 500ms;
+
+  &:hover {
+    background-color: $bgBtnColorHvr;
+  }
+
 }

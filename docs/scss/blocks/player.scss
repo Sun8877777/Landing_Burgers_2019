@@ -1,0 +1,162 @@
+.player {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  width: 100%;
+  background-color: $colorPlayerControlsBg;
+  height: rem(34);
+  align-items: center;
+
+  &.hidden {
+    opacity: 0;
+    transition: opacity .3s;
+  }
+  @include adaptive(tablet) {
+    height: rem(43);
+  }
+  @include adaptive(smart) {
+    height: rem(32);
+  }
+}
+
+
+.player__start {
+  font-size: 0;
+  width: 0;
+  height: 0;
+  border: rem(16) solid transparent;
+  border-left-color: $colorPlayerControls;
+  padding: 0;
+  border-right-width: 0;
+  background: transparent;
+  margin: 2px 2px 2px rem(19);
+  outline: none;
+  margin-right: 1.5rem;
+  @include adaptive(tablet) {
+    margin: 2px 2px 2px rem(40);    
+    outline: none;
+    margin-right: 2rem;
+  }
+  @include adaptive(smart) {
+    margin: 0 2px 0 rem(24);
+    margin-right: rem(2);
+    border-width: rem(12);
+  }
+  cursor: pointer;
+  &.paused {
+    width: rem(15);
+    height: rem(22);
+    border: none;
+    position: relative;
+    @include adaptive (smart) {
+      margin-right: rem(12);
+    }
+    &:after,
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 5px;
+      top: 0;
+      bottom: 0;
+      background: $colorPlayerControls;
+    }
+    &:after {
+      right: 0;
+    }
+    &:before {
+      left: 0;
+    }
+  }
+}
+
+
+.player__wrap-progress {
+  position: relative;
+}
+
+.player__progress {
+  width: 31.5rem;
+  background-color: $colorPlayerControls;
+  // margin-top: 12px;
+  height: rem(8);
+  cursor: pointer;
+  @include adaptive(tablet) {
+    width: 43rem;
+  }
+  @include adaptive(smart) {
+    width: 74vw;
+  }
+}
+
+.player__progress-marker {
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: $colorPlayerControlsBg;
+  border: 1px solid $colorBlack;
+  display: block;  
+  top: 0;
+  left: 0%;
+  margin-left: -0.5rem;
+  cursor: pointer;
+  @include adaptive(tablet) {
+    display: none;
+  }
+}
+
+.player__mute-on {
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  background: url(../img/volume-min-btn.png) no-repeat;
+  margin-left: 3.3rem;
+  margin-top: rem(5);
+  @include adaptive(tablet) {
+    display: none;
+  }
+  &.player__mute-off {
+    width: 2rem;
+    height: 2rem;
+    border: none;
+    position: relative;
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 5px;
+      top: -5px;
+      left: 7px;
+      bottom: 0;
+      background: red;
+      transform: rotate(45deg);
+    }
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      top: -1px;
+      left: -3px;
+      bottom: 0;
+      background:transparent;
+      border: 2px solid red;
+    }
+
+  }
+}
+
+.player .player__volume {
+  width: 4.2rem;
+  margin-left: auto;
+  margin-right: 1.4rem;
+  background-color: $colorPlayerControls;
+  // margin-top: 12px;
+  height: 8px;
+  @include adaptive(tablet) {
+    display: none;
+  }
+}

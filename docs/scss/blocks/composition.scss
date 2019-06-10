@@ -42,7 +42,7 @@
   display: none;
 }
 
-.open {
+.slide__image-wrap.open {
   @include adaptive(tablet) {
     display: flex;
     justify-content: center;

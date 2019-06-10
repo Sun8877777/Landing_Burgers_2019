@@ -125,18 +125,24 @@
   }
 }
 .reviews__modal {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
-  display: none;
-  width: rem(460);
+  display: block;
+  width: 41.8%;
   height: rem(253);
-  margin-left: rem(-230);
+  margin-left: -21%;
   margin-top: rem(-127);
   background-color: $colorWhite;
   border-radius: rem(5);
   z-index: 5;
   padding: 1.9%;
+  @include adaptive(tablet) {
+    width: 65%;
+  }
+  @include adaptive(smart) {
+    width: 95%;
+  }
   .section-title {
     font-size: rem(14);
     text-align: left;

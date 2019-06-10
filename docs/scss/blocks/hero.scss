@@ -8,4 +8,9 @@
   .hero__promo {
     position: relative;
   }
+  .arrow {
+    &:hover {
+      transform: scale(1.5) translateX(rem(-10));
+    }
+  } 
 }
