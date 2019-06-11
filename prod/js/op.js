@@ -61,10 +61,11 @@ const scrollToSection = direction => {
   }
 };
 
-let mult = true;
-if (mult) {
-  mult = false;
-  $(".wrapper").on("wheel", e => {
+
+$(".wrapper").on("wheel", e => {
+  let mult = true;
+  if (mult) {
+    mult = false;
     const deltaY = e.originalEvent.deltaY;
 
     if (deltaY > 0) {
@@ -73,12 +74,14 @@ if (mult) {
     if (deltaY < 0) {
       scrollToSection("prev");
     }
+  }
+  setTimeout(() => { mult = true }, 1300)
   });
 
-  $('.wrapper').on('touchmove', e => {
-    e.preventDefault();
-  });
-}
+$('.wrapper').on('touchmove', e => {
+  e.preventDefault();
+});
+
 
 
 $(document).on("keydown", e => {
@@ -114,5 +117,5 @@ if (isMobile) {
 
 
 
-setTimeout(() => { mult = true }, 1300)
+
 
